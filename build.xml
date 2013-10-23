@@ -1,0 +1,175 @@
+<!--
+ !  \par
+ !  This file is part of the AstC2C source-to-source compiler technology.
+ !  Redistribution of this file to outside parties is strictly prohibited
+ !  without the written consent of the module owner indicated below.
+ !
+ !  \par  Module owner:
+ !  Thierry Lepley, STMicroelectronics (thierry.lepley@st.com)
+ !
+ !  \par  STMicroelectronics Copyright (C) 2010-2013
+ !
+ !  \par  Authors:
+ !  Thierry Lepley, STMicroelectronics (thierry.lepley@st.com)
+-->
+
+<project name="AstC2C" default="build">
+
+  <!-- ==================================== -->
+  <!-- ======== PROPERTY DEFINITION ======= -->
+  <!-- ==================================== -->
+
+  <property name="src" value="${basedir}/src" />
+  <property name="src.parser" value="${src}/parser" />
+  <property name="builtins.OCL" value="${basedir}/builtins/OCL" />
+  <property name="lib" value="${basedir}/lib" />
+  <property name="lib.include" value="${lib}/include" />
+  <property name="lib.jar" value="${lib}/jar" />
+
+  <!-- Use a pathconvert task to define the "antlr.path" property to ensure
+       that it is correctly defined for the current platform since it is used by
+       platform dependent tools (i.e. make) -->
+  <pathconvert property="antlr.path" dirsep="/" >
+    <path location="${lib.jar}/antlr.jar" />
+  </pathconvert>
+
+  <property name="parser-build" value="${basedir}/parser-build" />
+  <property name="java-build" value="${basedir}/build" />
+  <property name="out" value="${basedir}/jar" />
+  <property name="install-dir" value="${basedir}/install" />
+
+  <!-- ==================================== -->
+  <!-- ========== INITIALIZATION ========== -->
+  <!-- ==================================== -->
+
+  <path id="classpath">
+     <pathelement location="${java-build}" />
+    <fileset dir="${lib.jar}">
+      <include name="*.jar" />
+    </fileset>
+  </path>
+
+  <!-- ==================================== -->
+  <!-- ============== COMPILE ============= -->
+  <!-- ==================================== -->
+
+  <!-- generate java sources from antlr grammar files -->
+  <!-- call 'make' in the directory containing the antlr files. -->
+  <target name="antlr.generate"
+     description="Compile parsers" >
+     <exec dir="${src.parser}"
+          executable="make"
+          failonerror="true"
+          taskname="antlr">
+      <arg value="ROOT_DIR=${basedir}" />
+      <arg value="GENDIR=${parser-build}/parser" />
+      <arg value="ANTLR_PATH=${antlr.path}" />
+    </exec>
+  </target>
+
+  <target name="builtins.OCL">
+    <exec dir="${builtins.OCL}"
+          executable="make"
+          failonerror="true"
+          taskname="builtins">
+    </exec>
+  </target>
+
+  <target name="lib.include">
+    <exec dir="${lib.include}"
+          executable="make"
+          failonerror="true"
+          taskname="lib">
+    </exec>
+  </target>
+
+  <target name="compile"
+          description="Compile the java code"
+          depends="antlr.generate,builtins.OCL,lib.include">
+    <mkdir dir="${java-build}" />
+    <javac destdir="${java-build}" debug="on" target="1.6">
+      <classpath refid="classpath" />
+      <src path="${src}:${parser-build}" />
+      <include name="**/*.java" />
+    </javac>
+  </target>
+
+  <!-- ==================================== -->
+  <!-- =============== JAR ================ -->
+  <!-- ==================================== -->
+
+  <target name="build"
+          description="Build Jar file"
+          depends="compile">
+    <mkdir dir="${out}" />
+    <jar destfile="${out}/C2C.jar"  basedir="${java-build}" />
+  </target>
+
+  <!-- For eclipse: only jar building, no dep with compile -->
+  <!-- eclipse compiles itself java files                  -->
+  <target name="jar"
+          description="Build Jar file" >
+    <mkdir dir="${out}" />
+    <jar destfile="${out}/C2C.jar"  basedir="${java-build}" />
+  </target>
+
+
+  <!-- ==================================== -->
+  <!-- ============= INSTALL ============== -->
+  <!-- ==================================== -->
+
+  <target name="install"
+	  description="Install the compiler"
+          depends="build">
+    <exec dir="${basedir}" executable="script/INSTALL" failonerror="true" />
+  </target>
+
+  <!-- ==================================== -->
+  <!-- ============== CLEAN =============== -->
+  <!-- ==================================== -->
+
+  <target name="cleanall"
+	      description="Removes all generated files"
+	  	  depends="clean" >
+    <delete dir="${install-dir}" />
+  </target>
+
+  <target name="clean"
+          description="Removes generated files"
+  	      depends="clean_parser,clean_jar" >
+    <exec dir="${builtins.OCL}" executable="make" failonerror="true">
+      <arg value="clean" />
+    </exec>
+    <exec dir="${lib.include}" executable="make" failonerror="true">
+      <arg value="clean" />
+    </exec>
+    <delete dir="${java-build}" />
+  </target>
+
+  <!-- For eclipse: parser only cleaning -->
+  <target name="clean_parser"
+	description="Removes jar files">
+    <delete dir="${parser-build}" />
+  </target>
+	
+  <!-- For eclipse: final jar only cleaning -->
+  <target name="clean_jar"
+	description="Removes jar files">
+	<delete dir="${out}" />
+  </target>
+
+  <!-- ==================================== -->
+  <!-- =============== HELP =============== -->
+  <!-- ==================================== -->
+
+  <target name="help">
+    <echo message="**This is the ant build file for the AstC2C project.**" />
+    <echo message="The available targets are the following:" />
+    <echo message="  compile: compiles the product into ${build}" />
+    <echo message="  build  : compiles and builds a jar into ${out}" />
+    <echo message="  install: compiles and create installation directories into ${out}" />
+    <echo message="  clean  : removes all generated files." />
+    <echo message="" />
+  </target>
+
+</project>

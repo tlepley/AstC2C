@@ -1,0 +1,354 @@
+#!/bin/sh
+
+# Note: This script must be executed from its directory
+# ----
+
+# ==================================
+# Verbose functions (usage, help)
+#
+# No parameters
+# ==================================
+usage() {
+  echo "usage: $0 [build|ref|check]"
+}
+help() {
+  echo "Options:"
+  echo "  + build: build tests (in 'build[_split]' directory)"
+  echo "  + ref  : build tests and create a reference (in 'ref[_split]' directory)"
+  echo "  + check: build tests and check conformance with regard to the reference"
+}
+
+# ==================================
+# Execution management function
+#
+# Parameters:
+#   - Directory extension
+#   - C2C options
+# ==================================
+execute() {
+
+  error=0;
+
+  compiler_exec=astc2c;
+  if [ $2 = 1 ] ; then
+    compiler_exec=oclc;
+  fi
+
+  # Generation directories
+  build_dir=`echo build$1`
+  ref_dir=`echo ref$1`
+
+  # Compile the test into the build directory
+  #------------------------------------------
+
+  # Build Paths / files
+  build_path=`echo $build_dir/$path_radix`
+  #echo "build_path=$build_path"
+  build_c2c=`echo $build_path/$file_radix.c2c.c`
+  build_c2c_add=
+  if [ $2 = 1 ] ; then
+    build_c2c=`echo $build_path/$file_radix.cl.c`
+    build_c2c_add=`echo $build_path/$file_radix.cl.kernel.c`
+  fi
+  #echo "build_c2c=$build_c2c"
+  build_c2c_out=`echo $build_path/$file_radix.OUT`
+  #echo "build_c2c_out=$build_c2c_out"
+  build_c2c_err=`echo $build_path/$file_radix.ERR`
+  #echo "build_c2c_err=$build_c2c_err"
+  build_c2c_ok=`echo $build_path/$file_radix.OK`
+  #echo "build_c2c_ok=$build_c2c_ok"
+  build_c2c_nok=`echo $build_path/$file_radix.NOK`
+  #echo "build_c2c_nok=$build_c2c_nok"
+
+  # Create the directory if needed
+  if [ ! -d $build_path ] ; then
+    mkdir -p $build_path
+  fi
+
+  # Compile in standard mode
+  echo "   ... Compiling '$file_name'"
+  #echo "../bin/$compiler_exec -C --outdir $build_path -- $full_name > $build_c2c_out 2>$build_c2c_err"
+  ../bin/$compiler_exec -C --outdir $build_path -- $full_name > $build_c2c_out 2>$build_c2c_err
+  ret_code=$?
+
+  if [ $ret_code -ne 0 ] ; then
+    # Compilation Error
+    echo "   ... Compilation nok"
+    rm -f $build_c2c_ok  # remove possible remaining file
+			 # from previous execution
+    touch $build_c2c_nok
+  else
+    # Compilation OK
+    echo "   ... Compilation ok"
+    rm -f $build_c2c_nok # remove possible remaining file
+			 # from previous execution
+    touch $build_c2c_ok
+  fi
+
+
+
+  # Refence Paths / files
+  ref_path=`echo $ref_dir/$path_radix`
+  #echo "ref_path=$ref_path"
+  ref_c2c=`echo $ref_path/$file_radix.c2c.c`
+  ref_c2c_add=
+  if [ $2 = 1 ] ; then
+    ref_c2c=`echo $ref_path/$file_radix.cl.c`
+    ref_c2c_add=`echo $ref_path/$file_radix.cl.kernel.c`
+  fi
+  #echo "ref_c2c=ref_c2c"
+  ref_c2c_out=`echo $ref_path/$file_radix.OUT`
+  #echo "ref_c2c_out=$ref_c2c_out"
+  ref_c2c_err=`echo $ref_path/$file_radix.ERR`
+  #echo "ref_c2c_err=$ref_c2c_err"
+  ref_c2c_ok=`echo $ref_path/$file_radix.OK`
+  #echo "ref_c2c_ok=$ref_c2c_ok"
+  ref_c2c_nok=`echo $ref_path/$file_radix.NOK`
+  #echo "ref_c2c_nok=$ref_c2c_nok"
+
+  if [ $exec_option = "check" ] ; then
+    error=0
+
+    #-> Check the reference
+    #----------------------
+    reference=1
+    if [ ! -f $ref_c2c_nok ] ; then
+      if [ ! -f $ref_c2c_ok ] ; then
+        # No reference
+        echo "    -> Missing reference, can not check !"
+	reference=0
+        error=1
+      fi
+    else
+      if [ -f $ref_c2c_ok ] ; then
+        # Two flags presents
+        echo "    -> Wrong reference, conflicting OK and NOK flags existing !"
+	reference=0;
+        error=1
+      fi
+    fi
+    # Continue the flag
+    if [ $reference = 1 ] ; then
+      if [ ! -f $ref_c2c_out ] ; then
+        echo "    -> Wrong reference, OUT file missing !"
+        reference=0
+        error=1
+      fi
+      if [ ! -f $ref_c2c_err ] ; then
+        echo "    -> Wrong reference, ERR file missing !"
+        reference=0
+        error=1
+      fi
+    fi
+
+    #-> Compare with the reference
+    #-----------------------------
+    if [ $reference = 1 ] ; then
+      # A correct reference exists
+
+      #-> Check compilation status
+      if [ -f $build_c2c_ok ] ; then
+        if [ ! -f $ref_c2c_ok ] ; then
+	   echo "    -> Different compilation status [build=ok/Ref=nok] !"
+	   error=1
+        fi
+      else
+        if [ -f $ref_c2c_ok ] ; then
+	   echo "    -> Different compilation status [build=ok/Ref=nok] !"
+	   error=1
+        fi
+      fi 
+
+      #-> Diff output files
+      if [ -f $build_c2c_ok ] && [ -f $ref_c2c_ok ]  ; then
+        diff $ref_c2c $build_c2c > /dev/null
+        ret_code=$?
+        if [ $ret_code != 0 ] ; then
+	  echo "    -> Generated C2C file different !"
+	  error=1
+        fi
+	if [ ! $ref_c2c_add = "" ] ; then
+          diff $ref_c2c_add $build_c2c_add > /dev/null
+          ret_code=$?
+          if [ $ret_code != 0 ] ; then
+	    echo "    -> Additional generated C2C file different !"
+	    error=1
+          fi
+	fi
+      fi
+      diff $ref_c2c_out $build_c2c_out  > /dev/null
+      ret_code=$?
+      if [ $ret_code != 0 ] ; then
+	echo "    -> OUT trace different !"
+	error=1
+      fi
+      diff $ref_c2c_err $build_c2c_err  > /dev/null
+      ret_code=$?
+      if [ $ret_code != 0 ] ; then
+	echo "    -> ERR trace different !"
+	error=1
+      fi
+    fi   #  if [ $reference = 1 ]
+
+    if [  $error = 0 ] ; then
+        echo "       [check OK]"
+    else
+        echo "       [check NOK]"
+	return_status=1
+    fi
+  fi
+
+  if [ $exec_option = "ref" ] ; then
+    #-> Transfer to the reference directory
+    #--------------------------------------
+
+    # Create the directory if needed
+    if [ ! -d $ref_path ] ; then
+	mkdir -p $ref_path
+    fi
+
+    # Compilation status
+    if [ -f $build_c2c_ok ] ; then
+      # Compilation OK
+      rm -f $ref_c2c_nok
+      touch $ref_c2c_ok
+    else
+      # Compilation NOK
+      rm -f $ref_c2c_ok
+      touch $ref_c2c_nok
+    fi 
+
+    # Copy generated files
+    if [ -f $build_c2c_ok ] ; then
+      cp -f  $build_c2c $ref_path
+      if [ ! $build_c2c_add = "" ] ; then
+        cp -f  $build_c2c_add $ref_path
+      fi
+    fi
+    cp -f  $build_c2c_out $ref_path
+    cp -f  $build_c2c_err $ref_path
+  fi
+}
+
+
+
+
+# Parse options
+if [ $# -lt 1 ] ; then
+   echo "Error: Missing parameter"
+   usage
+   exit 1
+fi 
+
+
+
+count=0
+for opt in $@; do
+  # First option 
+  if [ $count = 0 ] ; then
+    if [ ! $opt = "build" ] ; then
+      if [ ! $opt = "check" ] ; then
+        if [ ! $opt = "ref" ] ; then
+          if [ $opt = "help" ] ; then
+	    usage
+	    help
+          else
+            echo "Error: Bad option '$opt'"
+            usage
+          fi
+          exit 1
+        fi
+      fi
+    fi
+    exec_option=$opt
+  fi
+
+  # Increment counter
+  let count="count+1"
+done
+
+
+currentdir=`pwd`
+
+# Files to compile in src/ directory
+cfile_list=`find src -name '*.c'`
+clfile_list=`find src -name '*.cl'`
+
+return_status=0;
+
+# Iterates on C files
+for full_name in $cfile_list; 
+do
+  # Full name
+  #echo "full_name=$full_name"
+  
+  # Path name
+  path=`echo $full_name | sed 's?/[a-zA-Z_0-9-]*\.c$??'`
+  #echo "path=$path"
+  # Path name without src
+  path_radix=`echo $path | sed 's?^src/??'`
+  #echo "path_radix=$path_radix"
+
+  # File name
+  file_name=`echo $full_name | sed 's?^.*/??'`
+  #echo "file_name=$file_name"
+  # File radix name
+  file_radix=`echo $file_name | sed 's/\.c$//'`
+  #echo "file_radix=$file_radix"
+
+
+  # standard execution
+  echo "... Processing '$full_name'"
+  execute "" 0
+  # split version
+  echo "... Processing '$full_name' (split)"
+  execute "_split" 0
+done
+
+# Iterates on C files
+for full_name in $clfile_list; 
+do
+  # Full name
+  #echo "full_name=$full_name"
+  
+  # Path name
+  path=`echo $full_name | sed 's?/[a-zA-Z_0-9-]*\.cl$??'`
+  #echo "path=$path"
+  # Path name without src
+  path_radix=`echo $path | sed 's?^src/??'`
+  #echo "path_radix=$path_radix"
+
+  # File name
+  file_name=`echo $full_name | sed 's?^.*/??'`
+  #echo "file_name=$file_name"
+  # File radix name
+  file_radix=`echo $file_name | sed 's/\.cl$//'`
+  #echo "file_radix=$file_radix"
+
+
+  # standard execution
+  echo "... Processing '$full_name'"
+  execute "" 1
+  # split version
+  echo "... Processing '$full_name' (split)"
+  execute "_split" 1
+done
+
+
+# Verbose final status
+if [ $exec_option = "check" ] ; then
+  echo
+  echo "################################"
+  if [ $return_status = 0 ] ; then
+    echo "#        Regression OK         #"
+  else
+    echo "#        Regression NOK        #"
+  fi
+  echo "################################"
+  echo
+fi
+
+
+
+# Return exit status
+exit $return_status

@@ -1,0 +1,807 @@
+ADD_UP_BLOCKS	src/me_fullfast.c	/^#define ADD_UP_BLOCKS()   _o=*_bo; _i=*_bi; _j=*_b/
+ADD_XRATE1	src/context_ini.c	/^#define ADD_XRATE1(jj,ctx,tab,num) \\$/
+ADD_XRATE2	src/context_ini.c	/^#define ADD_XRATE2(ii,jj,ctx,tab,num) \\$/
+AllocNALU	src/nalucommon.c	/^NALU_t *AllocNALU(int buffersize)$/
+AllocNalPayloadBuffer	src/nal.c	/^void AllocNalPayloadBuffer()$/
+AllocPPS	src/parsetcommon.c	/^pic_parameter_set_rbsp_t *AllocPPS ()$/
+AllocSPS	src/parsetcommon.c	/^seq_parameter_set_rbsp_t *AllocSPS ()$/
+AppendTmpbits2Buf	src/sei.c	/^void AppendTmpbits2Buf( Bitstream* dest, Bitstream/
+B8Mode2Value	src/macroblock.c	/^int B8Mode2Value (int b8mode, int b8pdir)$/
+BIARI_CTX_INIT1	src/context_ini.c	/^#define BIARI_CTX_INIT1(jj,ctx,tab,num) \\$/
+BIARI_CTX_INIT2	src/context_ini.c	/^#define BIARI_CTX_INIT2(ii,jj,ctx,tab,num) \\$/
+BIDPartitionCost	src/mv-search.c	/^int BIDPartitionCost (int   blocktype,$/
+BIT_SET	src/cabac.c	/^#define BIT_SET(x,n)  ((int)(((x)&((int64)1<<(n)))/
+BPredPartitionCost	src/mv-search.c	/^int BPredPartitionCost (int   blocktype,$/
+BlockMotionSearch	src/mv-search.c	/^BlockMotionSearch (short     ref,           \/\/!< r/
+Build_Status_Map	src/decoder.c	/^void Build_Status_Map(byte **s_map)$/
+CAVLC_init	src/lencod.c	/^void CAVLC_init(void)$/
+CalculateFrameNumber	src/image.c	/^static int CalculateFrameNumber(void)$/
+CalculateOffset8Param	src/q_offsets.c	/^void CalculateOffset8Param ()$/
+CalculateOffsetParam	src/q_offsets.c	/^void CalculateOffsetParam ()$/
+CalculateQuant8Param	src/q_matrix.c	/^void CalculateQuant8Param()$/
+CalculateQuantParam	src/q_matrix.c	/^void CalculateQuantParam(void)$/
+CalculateSparePicture	src/sei.c	/^void CalculateSparePicture()$/
+CeilLog2	src/configfile.c	/^unsigned CeilLog2( unsigned uiVal)$/
+CheckAvailabilityOfNeighbors	src/mb_access.c	/^void CheckAvailabilityOfNeighbors(void)$/
+CheckAvailabilityOfNeighborsCABAC	src/cabac.c	/^void CheckAvailabilityOfNeighborsCABAC(void)$/
+CheckOffsetParameterName	src/q_offsets.c	/^int CheckOffsetParameterName (char *s, int *type)$/
+CheckParameterName	src/q_matrix.c	/^int CheckParameterName (char *s, int *type)$/
+CheckReliabilityOfRef	src/rdopt.c	/^int CheckReliabilityOfRef (int block, int list_idx/
+ChromaPrediction4x4	src/macroblock.c	/^void ChromaPrediction4x4 ( int   uv,           \/\/ /
+ChromaResidualCoding	src/macroblock.c	/^void ChromaResidualCoding (int* cr_cbp)$/
+ClearBufferingPeriod	src/sei.c	/^void ClearBufferingPeriod()$/
+ClearFastFullIntegerSearch	src/me_fullfast.c	/^ClearFastFullIntegerSearch ()$/
+ClearPanScanRectInfoPayload	src/sei.c	/^void ClearPanScanRectInfoPayload()$/
+ClearPicTiming	src/sei.c	/^void ClearPicTiming()$/
+ClearPostFilterHints	src/sei.c	/^void ClearPostFilterHints()$/
+ClearRandomAccess	src/sei.c	/^void ClearRandomAccess()$/
+ClearSubseqCharPayload	src/sei.c	/^void ClearSubseqCharPayload()$/
+ClearSubseqInfoPayload	src/sei.c	/^void ClearSubseqInfoPayload(int currLayer)$/
+ClearToneMapping	src/sei.c	/^void ClearToneMapping() $/
+ClearUser_data_registered_itu_t_t35	src/sei.c	/^void ClearUser_data_registered_itu_t_t35()$/
+ClearUser_data_unregistered	src/sei.c	/^void ClearUser_data_unregistered()$/
+Clear_Motion_Search_Module	src/mv-search.c	/^Clear_Motion_Search_Module ()$/
+CloseAnnexbFile	src/annexb.c	/^void CloseAnnexbFile(void) {$/
+CloseBufferingPeriod	src/sei.c	/^void CloseBufferingPeriod()$/
+ClosePanScanRectInfo	src/sei.c	/^void ClosePanScanRectInfo()$/
+ClosePicTiming	src/sei.c	/^void ClosePicTiming()$/
+ClosePostFilterHints	src/sei.c	/^void ClosePostFilterHints()$/
+CloseRTPFile	src/rtp.c	/^void CloseRTPFile ()$/
+CloseRandomAccess	src/sei.c	/^void CloseRandomAccess()$/
+CloseSEIMessages	src/sei.c	/^void CloseSEIMessages()$/
+CloseSceneInformation	src/sei.c	/^void CloseSceneInformation()$/
+CloseSparePicture	src/sei.c	/^void CloseSparePicture()$/
+CloseSubseqChar	src/sei.c	/^void CloseSubseqChar()$/
+CloseSubseqInfo	src/sei.c	/^void CloseSubseqInfo(int currLayer)$/
+CloseSubseqLayerInfo	src/sei.c	/^void CloseSubseqLayerInfo()$/
+CloseToneMapping	src/sei.c	/^void CloseToneMapping() $/
+CloseUser_data_registered_itu_t_t35	src/sei.c	/^void CloseUser_data_registered_itu_t_t35()$/
+CloseUser_data_unregistered	src/sei.c	/^void CloseUser_data_unregistered()$/
+ComposeRTPPacket	src/rtp.c	/^int ComposeRTPPacket (RTPpacket_t *p)$/
+ComposeSparePictureMessage	src/sei.c	/^void ComposeSparePictureMessage(int delta_spare_fr/
+CompressSpareMBMap	src/sei.c	/^Boolean CompressSpareMBMap(unsigned char **map_sp,/
+ComputeFrameMAD	src/ratectl.c	/^double ComputeFrameMAD()$/
+Conceal_Error	src/decoder.c	/^void Conceal_Error(imgpel **inY, int mb_y, int mb_/
+Configure	src/configfile.c	/^void Configure (int ac, char *av[])$/
+DeblockFrame	src/loopFilter.c	/^void DeblockFrame(ImageParameters *img, imgpel **i/
+DeblockMb	src/loopFilter.c	/^void DeblockMb(ImageParameters *img, imgpel **imgY/
+DecOneForthPix	src/decoder.c	/^void DecOneForthPix(imgpel **dY, imgpel ***dref)$/
+DisplayEncoderParams	src/configfile.c	/^static int DisplayEncoderParams(void)$/
+EPZSBiPredBlockMotionSearch	src/me_epzs.c	/^EPZSBiPredBlockMotionSearch (imgpel * cur_pic,   \//
+EPZSBlockTypePredictors	src/me_epzs.c	/^static void EPZSBlockTypePredictors (int block_x, /
+EPZSDelete	src/me_epzs.c	/^void EPZSDelete (void)$/
+EPZSInit	src/me_epzs.c	/^EPZSInit (void)$/
+EPZSOutputStats	src/me_epzs.c	/^EPZSOutputStats (FILE * stat, short stats_file)$/
+EPZSPelBlockMotionSearch	src/me_epzs.c	/^EPZSPelBlockMotionSearch (imgpel * cur_pic,  \/\/ <-/
+EPZSSliceInit	src/me_epzs.c	/^EPZSSliceInit (EPZSColocParams * p,$/
+EPZSSpatialMemPredictors	src/me_epzs.c	/^static void EPZSSpatialMemPredictors (int list,$/
+EPZSSpatialPredictors	src/me_epzs.c	/^static short EPZSSpatialPredictors (PixelPos block/
+EPZSSubPelBlockMotionSearch	src/me_epzs.c	/^EPZSSubPelBlockMotionSearch (imgpel*   orig_pic,  /
+EPZSSubPelBlockSearchBiPred	src/me_epzs.c	/^EPZSSubPelBlockSearchBiPred (imgpel*   orig_pic,  /
+EPZSTemporalPredictors	src/me_epzs.c	/^EPZSTemporalPredictors (int list,         \/\/ <--  /
+EPZSWindowPredictorInit	src/me_epzs.c	/^static void EPZSWindowPredictorInit (short search_/
+EPZSWindowPredictors	src/me_epzs.c	/^static void EPZSWindowPredictors (short mv[2], EPZ/
+EdgeLoopChromaMBAff	src/loopFilter.c	/^void EdgeLoopChromaMBAff(imgpel** Img, byte Streng/
+EdgeLoopChromaNormal	src/loopFilter.c	/^void EdgeLoopChromaNormal(imgpel** Img, byte Stren/
+EdgeLoopLumaMBAff	src/loopFilter.c	/^void EdgeLoopLumaMBAff(imgpel** Img, byte Strength/
+EdgeLoopLumaNormal	src/loopFilter.c	/^void EdgeLoopLumaNormal(imgpel** Img, byte Strengt/
+Error_Concealment	src/decoder.c	/^void Error_Concealment(imgpel **inY, byte **s_map,/
+FastFullPelBlockMotionSearch	src/me_fullfast.c	/^FastFullPelBlockMotionSearch (imgpel*   orig_pic, /
+FastLine4X	src/refbuf.c	/^imgpel *FastLine4X (imgpel ****Pic, int y, int x)$/
+FastLine8X_chroma	src/refbuf.c	/^imgpel *FastLine8X_chroma (imgpel ****Pic, int y, /
+FinalizeBufferingPeriod	src/sei.c	/^void FinalizeBufferingPeriod()$/
+FinalizePanScanRectInfo	src/sei.c	/^void FinalizePanScanRectInfo()$/
+FinalizePicTiming	src/sei.c	/^void FinalizePicTiming()$/
+FinalizePostFilterHints	src/sei.c	/^void FinalizePostFilterHints()$/
+FinalizeRandomAccess	src/sei.c	/^void FinalizeRandomAccess()$/
+FinalizeSceneInformation	src/sei.c	/^void FinalizeSceneInformation()$/
+FinalizeSpareMBMap	src/sei.c	/^void FinalizeSpareMBMap()$/
+FinalizeSubseqChar	src/sei.c	/^void FinalizeSubseqChar()$/
+FinalizeSubseqInfo	src/sei.c	/^void FinalizeSubseqInfo(int currLayer)$/
+FinalizeSubseqLayerInfo	src/sei.c	/^void FinalizeSubseqLayerInfo()$/
+FinalizeToneMapping	src/sei.c	/^void FinalizeToneMapping()$/
+FinalizeUser_data_registered_itu_t_t35	src/sei.c	/^void FinalizeUser_data_registered_itu_t_t35()$/
+FinalizeUser_data_unregistered	src/sei.c	/^void FinalizeUser_data_unregistered()$/
+FindSkipModeMotionVector	src/mv-search.c	/^void FindSkipModeMotionVector ()$/
+FmoEndPicture	src/fmo.c	/^int FmoEndPicture ()$/
+FmoGenerateMBAmap	src/fmo.c	/^static int FmoGenerateMBAmap (ImageParameters * im/
+FmoGenerateMapUnitToSliceGroupMap	src/fmo.c	/^static int FmoGenerateMapUnitToSliceGroupMap (Imag/
+FmoGenerateType0MapUnitMap	src/fmo.c	/^static void FmoGenerateType0MapUnitMap (ImageParam/
+FmoGenerateType1MapUnitMap	src/fmo.c	/^static void FmoGenerateType1MapUnitMap (ImageParam/
+FmoGenerateType2MapUnitMap	src/fmo.c	/^static void FmoGenerateType2MapUnitMap (ImageParam/
+FmoGenerateType3MapUnitMap	src/fmo.c	/^static void FmoGenerateType3MapUnitMap (ImageParam/
+FmoGenerateType4MapUnitMap	src/fmo.c	/^static void FmoGenerateType4MapUnitMap (ImageParam/
+FmoGenerateType5MapUnitMap	src/fmo.c	/^static void FmoGenerateType5MapUnitMap (ImageParam/
+FmoGenerateType6MapUnitMap	src/fmo.c	/^static void FmoGenerateType6MapUnitMap (ImageParam/
+FmoGetFirstMBOfSliceGroup	src/fmo.c	/^int FmoGetFirstMBOfSliceGroup (int SliceGroupID)$/
+FmoGetFirstMacroblockInSlice	src/fmo.c	/^int FmoGetFirstMacroblockInSlice ( int SliceGroup)/
+FmoGetLastCodedMBOfSliceGroup	src/fmo.c	/^int FmoGetLastCodedMBOfSliceGroup (int SliceGroupI/
+FmoGetNextMBNr	src/fmo.c	/^int FmoGetNextMBNr (int CurrentMbNr)$/
+FmoGetPreviousMBNr	src/fmo.c	/^int FmoGetPreviousMBNr (int CurrentMbNr)$/
+FmoInit	src/fmo.c	/^int FmoInit(ImageParameters * img, pic_parameter_s/
+FmoMB2SliceGroup	src/fmo.c	/^int FmoMB2SliceGroup ( int mb)$/
+FmoSetLastMacroblockInSlice	src/fmo.c	/^void FmoSetLastMacroblockInSlice ( int mb)$/
+FmoSliceGroupCompletelyCoded	src/fmo.c	/^int FmoSliceGroupCompletelyCoded( int SliceGroupID/
+FmoStartPicture	src/fmo.c	/^int FmoStartPicture ()$/
+FmoUninit	src/fmo.c	/^void FmoUninit()$/
+FreeNALU	src/nalucommon.c	/^void FreeNALU(NALU_t *n)$/
+FreeNalPayloadBuffer	src/nal.c	/^void FreeNalPayloadBuffer()$/
+FreePPS	src/parsetcommon.c	/^ void FreePPS (pic_parameter_set_rbsp_t *pps)$/
+FreeParameterSets	src/parset.c	/^void FreeParameterSets (void)$/
+FreeSPS	src/parsetcommon.c	/^ void FreeSPS (seq_parameter_set_rbsp_t *sps)$/
+FullPelBlockMotionBiPred	src/me_fullsearch.c	/^FullPelBlockMotionBiPred (imgpel*   orig_pic,     /
+FullPelBlockMotionSearch	src/me_fullsearch.c	/^FullPelBlockMotionSearch (imgpel*   orig_pic,     /
+GenerateParameterSets	src/parset.c	/^void GenerateParameterSets (void)$/
+GeneratePic_parameter_set_NALU	src/parset.c	/^NALU_t *GeneratePic_parameter_set_NALU(int PPS_id)/
+GeneratePic_parameter_set_rbsp	src/parset.c	/^int GeneratePic_parameter_set_rbsp (pic_parameter_/
+GeneratePictureParameterSet	src/parset.c	/^void GeneratePictureParameterSet( pic_parameter_se/
+GenerateSEImessage_NALU	src/parset.c	/^NALU_t *GenerateSEImessage_NALU()$/
+GenerateSEImessage_rbsp	src/parset.c	/^int GenerateSEImessage_rbsp (int id, byte *rbsp)$/
+GenerateSeq_parameter_set_NALU	src/parset.c	/^NALU_t *GenerateSeq_parameter_set_NALU (void)$/
+GenerateSeq_parameter_set_rbsp	src/parset.c	/^int GenerateSeq_parameter_set_rbsp (seq_parameter_/
+GenerateSequenceParameterSet	src/parset.c	/^void GenerateSequenceParameterSet( seq_parameter_s/
+GenerateVUIParameters	src/parset.c	/^void GenerateVUIParameters(seq_parameter_set_rbsp_/
+GenerateVUI_parameters_rbsp	src/parset.c	/^static int GenerateVUI_parameters_rbsp(seq_paramet/
+GetBestTransformP8x8	src/rdopt.c	/^int GetBestTransformP8x8()$/
+GetConfigFileContent	src/configfile.c	/^char *GetConfigFileContent (char *Filename)$/
+GetCtxModelNumber	src/context_ini.c	/^void GetCtxModelNumber (int* mnumber, MotionInfoCo/
+GetDirectCost8x8	src/mv-search.c	/^int GetDirectCost8x8 (int block, int *cost8x8)$/
+GetDirectCostMB	src/mv-search.c	/^int GetDirectCostMB (void)$/
+GetSkipCostMB	src/mv-search.c	/^int GetSkipCostMB (void)$/
+GetStrengthMBAff	src/loopFilter.c	/^void GetStrengthMBAff(byte Strength[16],ImageParam/
+GetStrengthNormal	src/loopFilter.c	/^void GetStrengthNormal(byte Strength[MB_BLOCK_SIZE/
+Get_Direct_Motion_Vectors	src/mv-search.c	/^void Get_Direct_Motion_Vectors ()$/
+Get_Reference_Block	src/decoder.c	/^void Get_Reference_Block(imgpel **imY,$/
+Get_Reference_Pixel	src/decoder.c	/^byte Get_Reference_Pixel(imgpel **imY, int y_pos, /
+HadamardMB	src/me_distortion.c	/^int HadamardMB (int c_diff[MB_PIXELS], int blockty/
+HadamardSAD4x4	src/me_distortion.c	/^int HadamardSAD4x4 (int* diff)$/
+HadamardSAD8x8	src/me_distortion.c	/^int HadamardSAD8x8 (int* diff)$/
+HaveAggregationSEI	src/sei.c	/^Boolean HaveAggregationSEI()$/
+I16Offset	src/rdopt.c	/^int I16Offset (int cbp, int i16mode)$/
+INCREMENT	src/me_fullfast.c	/^#define INCREMENT(inc)    _bo+=inc; _bi+=inc; _bj+/
+IS_COPY	inc/defines.h	/^#define IS_COPY(MB)     ((MB)->mb_type==0     && (/
+IS_DIRECT	inc/defines.h	/^#define IS_DIRECT(MB)   ((MB)->mb_type==0     && (/
+IS_INTER	inc/defines.h	/^#define IS_INTER(MB)    ((MB)->mb_type!=I4MB  && (/
+IS_INTERMV	inc/defines.h	/^#define IS_INTERMV(MB)  ((MB)->mb_type!=I4MB  && (/
+IS_INTRA	inc/defines.h	/^#define IS_INTRA(MB)    ((MB)->mb_type==I4MB  || (/
+IS_IPCM	inc/defines.h	/^#define IS_IPCM(MB)     ((MB)->mb_type==IPCM)$/
+IS_NEWINTRA	inc/defines.h	/^#define IS_NEWINTRA(MB) ((MB)->mb_type==I16MB)$/
+IS_OLDINTRA	inc/defines.h	/^#define IS_OLDINTRA(MB) ((MB)->mb_type==I4MB)$/
+IS_P8x8	inc/defines.h	/^#define IS_P8x8(MB)     ((MB)->mb_type==P8x8)$/
+IdentifyLevel	src/parset.c	/^int IdentifyLevel(void)$/
+IdentifyProfile	src/parset.c	/^int IdentifyProfile(void)$/
+InitBufferingPeriod	src/sei.c	/^void InitBufferingPeriod()$/
+InitEncoderParams	src/configfile.c	/^static int InitEncoderParams(void)$/
+InitOffsetParam	src/q_offsets.c	/^void InitOffsetParam ()$/
+InitPanScanRectInfo	src/sei.c	/^void InitPanScanRectInfo()$/
+InitPicTiming	src/sei.c	/^void InitPicTiming()$/
+InitPostFilterHints	src/sei.c	/^void InitPostFilterHints()$/
+InitRandomAccess	src/sei.c	/^void InitRandomAccess()$/
+InitSEIMessages	src/sei.c	/^void InitSEIMessages()$/
+InitSceneInformation	src/sei.c	/^void InitSceneInformation()$/
+InitSparePicture	src/sei.c	/^void InitSparePicture()$/
+InitSubseqChar	src/sei.c	/^void InitSubseqChar()$/
+InitSubseqInfo	src/sei.c	/^void InitSubseqInfo(int currLayer)$/
+InitSubseqLayerInfo	src/sei.c	/^void InitSubseqLayerInfo()$/
+InitToneMapping	src/sei.c	/^void InitToneMapping() $/
+InitUser_data_registered_itu_t_t35	src/sei.c	/^void InitUser_data_registered_itu_t_t35()$/
+InitUser_data_unregistered	src/sei.c	/^void InitUser_data_unregistered()$/
+Init_Motion_Search_Module	src/mv-search.c	/^Init_Motion_Search_Module ()$/
+Init_QMatrix	src/q_matrix.c	/^void Init_QMatrix (void)$/
+Init_QOffsetMatrix	src/q_offsets.c	/^void Init_QOffsetMatrix ()$/
+Init_redundant_frame	src/lencod.c	/^void Init_redundant_frame()$/
+InitializeFastFullIntegerSearch	src/me_fullfast.c	/^InitializeFastFullIntegerSearch ()$/
+Intra16x16_Mode_Decision	src/rdopt.c	/^void Intra16x16_Mode_Decision (Macroblock* currMB,/
+IntraChromaPrediction	src/macroblock.c	/^void IntraChromaPrediction (int *mb_up, int *mb_le/
+IntraChromaPrediction4x4	src/macroblock.c	/^void IntraChromaPrediction4x4 (int  uv,       \/\/ </
+IntraChromaRDDecision	src/macroblock.c	/^void IntraChromaRDDecision (RD_PARAMS enc_mb)$/
+JMHelpExit	src/configfile.c	/^void JMHelpExit (void)$/
+LAMBDA_FACTOR	inc/defines.h	/^#define  LAMBDA_FACTOR(lambda)        ((int)((doub/
+LevelCheck	src/configfile.c	/^static void LevelCheck(void)$/
+LowPassForIntra8x8Pred	src/transform8x8.c	/^void LowPassForIntra8x8Pred(imgpel *PredPel, int b/
+LumaPrediction4x4	src/macroblock.c	/^void LumaPrediction4x4 ( int   block_x,    \/\/!< re/
+LumaPrediction4x4Bi	src/macroblock.c	/^void LumaPrediction4x4Bi ( int   block_x,    \/\/!< /
+LumaResidualCoding	src/macroblock.c	/^void LumaResidualCoding (void)$/
+LumaResidualCoding8x8	src/macroblock.c	/^int LumaResidualCoding8x8 ( int   *cbp,        \/\/!/
+MADModelEstimator	src/rc_quadratic.c	/^void MADModelEstimator (rc_quadratic *prc, int n_w/
+MBType2Value	src/macroblock.c	/^int MBType2Value (Macroblock* currMB)$/
+MC	src/transform8x8.c	/^#define MC(coeff) ((coeff)&3)$/
+MV_COST	inc/defines.h	/^#define  MV_COST(f,s,cx,cy,px,py)     (WEIGHTED_CO/
+MV_COST_SMP	inc/defines.h	/^#define  MV_COST_SMP(f,cx,cy,px,py)     (WEIGHTED_/
+MbAffPostProc	src/image.c	/^void MbAffPostProc(void)$/
+Mlencod	src/lencod.c	/^int main(int argc,char **argv)$/
+Mode_Decision_for_4x4IntraBlocks	src/rdopt.c	/^int Mode_Decision_for_4x4IntraBlocks (int  b8,  in/
+Mode_Decision_for_8x8IntraBlocks	src/rdopt.c	/^int Mode_Decision_for_8x8IntraBlocks(int b8,double/
+Mode_Decision_for_Intra4x4Macroblock	src/rdopt.c	/^int Mode_Decision_for_Intra4x4Macroblock (double l/
+Mode_Decision_for_new_8x8IntraBlocks	src/transform8x8.c	/^int Mode_Decision_for_new_8x8IntraBlocks (int b8, /
+Mode_Decision_for_new_Intra8x8Macroblock	src/transform8x8.c	/^int Mode_Decision_for_new_Intra8x8Macroblock (doub/
+OneComponentChromaPrediction4x4_regenerate	src/macroblock.c	/^void OneComponentChromaPrediction4x4_regenerate ($/
+OneComponentChromaPrediction4x4_retrieve	src/macroblock.c	/^void OneComponentChromaPrediction4x4_retrieve (img/
+OneComponentLumaPrediction4x4	src/macroblock.c	/^void OneComponentLumaPrediction4x4 ( imgpel*   mpr/
+OpenAnnexbFile	src/annexb.c	/^void OpenAnnexbFile (char *Filename)$/
+OpenRTPFile	src/rtp.c	/^void OpenRTPFile (char *Filename)$/
+PaddAutoCropBorders	src/image.c	/^static void PaddAutoCropBorders (int org_size_x, i/
+ParameterNameToMapIndex	src/configfile.c	/^static int ParameterNameToMapIndex (char *s)$/
+ParseContent	src/configfile.c	/^void ParseContent (char *buf, int bufsize)$/
+ParseMatrix	src/q_matrix.c	/^void ParseMatrix (char *buf, int bufsize)$/
+ParseQOffsetMatrix	src/q_offsets.c	/^void ParseQOffsetMatrix (char *buf, int bufsize)$/
+ParseToneMappingConfigFile	src/sei.c	/^int ParseToneMappingConfigFile(tone_mapping_struct/
+PartitionMotionSearch	src/mv-search.c	/^PartitionMotionSearch (int    blocktype,$/
+Partition_BC_Header	src/header.c	/^int Partition_BC_Header(int PartNo)$/
+PatchInp	src/configfile.c	/^static void PatchInp (void)$/
+PatchInputNoFrames	src/configfile.c	/^void PatchInputNoFrames(void)$/
+PatchMatrix	src/q_matrix.c	/^void PatchMatrix(void)$/
+PrepareAggregationSEIMessage	src/rtp.c	/^void PrepareAggregationSEIMessage()$/
+ProfileCheck	src/configfile.c	/^static void ProfileCheck(void)$/
+PutBigDoubleWord	src/leaky_bucket.c	/^void PutBigDoubleWord(unsigned long dw, FILE *fp)$/
+QP2Qstep	src/ratectl.c	/^double QP2Qstep( int QP )$/
+Qstep2QP	src/ratectl.c	/^int Qstep2QP( double Qstep )$/
+RBSPtoEBSP	src/nal.c	/^int RBSPtoEBSP(byte *streamBuffer, int begin_bytep/
+RBSPtoNALU	src/nalu.c	/^int RBSPtoNALU (unsigned char *rbsp, NALU_t *nalu,/
+RCModelEstimator	src/rc_quadratic.c	/^void RCModelEstimator (rc_quadratic *prc, int n_wi/
+RDCost_for_4x4IntraBlocks	src/rdopt.c	/^double RDCost_for_4x4IntraBlocks (int*    nonzero,/
+RDCost_for_8x8IntraBlocks	src/transform8x8.c	/^double RDCost_for_8x8IntraBlocks(int *nonzero, int/
+RDCost_for_8x8blocks	src/rdopt.c	/^double RDCost_for_8x8blocks (int*    cnt_nonz,   \//
+RDCost_for_macroblocks	src/rdopt.c	/^int RDCost_for_macroblocks (double   lambda,      /
+REF_COST	inc/defines.h	/^#define  REF_COST(f,ref,list_offset) (WEIGHTED_COS/
+RSD	inc/ifunctions.h	/^static inline int RSD(int x)$/
+RTPUpdateTimestamp	src/rtp.c	/^void RTPUpdateTimestamp (int tr)$/
+RandomIntra	src/intrarefresh.c	/^int RandomIntra (int mb)$/
+RandomIntraInit	src/intrarefresh.c	/^void RandomIntraInit(int xsize, int ysize, int ref/
+RandomIntraNewPicture	src/intrarefresh.c	/^void RandomIntraNewPicture ()$/
+RandomIntraUninit	src/intrarefresh.c	/^void RandomIntraUninit()$/
+ReadOneFrame	src/image.c	/^static void ReadOneFrame (int FrameNoInFile, int H/
+ReportB	src/image.c	/^static void ReportB(time_t tmp_time, time_t me_tim/
+ReportFirstframe	src/image.c	/^static void ReportFirstframe(time_t tmp_time, time/
+ReportIntra	src/image.c	/^static void ReportIntra(time_t tmp_time, time_t me/
+ReportNALNonVLCBits	src/image.c	/^static void ReportNALNonVLCBits(time_t tmp_time, t/
+ReportP	src/image.c	/^static void ReportP(time_t tmp_time, time_t me_tim/
+ReportSP	src/image.c	/^static void ReportSP(time_t tmp_time, time_t me_ti/
+ResetFastFullIntegerSearch	src/me_fullfast.c	/^ResetFastFullIntegerSearch ()$/
+RestoreMV8x8	src/rdopt.c	/^void RestoreMV8x8(int dir)$/
+RestoreMVBlock8x8	src/rdopt.c	/^void RestoreMVBlock8x8(int dir, int block8x8, RD_8/
+RoundLog2	src/me_epzs.c	/^static int RoundLog2 (int iValue)$/
+SODBtoRBSP	src/nal.c	/^void SODBtoRBSP(Bitstream *currStream)$/
+SYMTRACESTRING	src/header.c	/^#define SYMTRACESTRING(s) strncpy(sym.tracestring,/
+Scaling_List	src/parset.c	/^int Scaling_List(short *scalingListinput, short *s/
+SetCoeffAndReconstruction8x8	src/rdopt.c	/^void SetCoeffAndReconstruction8x8 (Macroblock* cur/
+SetCtxModelNumber	src/context_ini.c	/^void SetCtxModelNumber ()$/
+SetImgType	src/lencod.c	/^void SetImgType(void)$/
+SetLagrangianMultipliers	src/slice.c	/^void SetLagrangianMultipliers()$/
+SetLevelIndices	src/lencod.c	/^void SetLevelIndices(void)$/
+SetModesAndRefframe	src/macroblock.c	/^void SetModesAndRefframe (int b8, short* p_dir, in/
+SetModesAndRefframeForBlocks	src/rdopt.c	/^void SetModesAndRefframeForBlocks (int mode)$/
+SetMotionVectorPredictor	src/mv-search.c	/^void SetMotionVectorPredictor (short  pmv[2],$/
+SetMotionVectorsMB	src/rdopt.c	/^void SetMotionVectorsMB (Macroblock* currMB, int b/
+SetRefAndMotionVectors	src/rdopt.c	/^void SetRefAndMotionVectors (int block, int mode, /
+Set_redundant_frame	src/lencod.c	/^void Set_redundant_frame()$/
+SetupFastFullPelSearch	src/me_fullfast.c	/^void SetupFastFullPelSearch (short ref, int list) /
+SetupLargerBlocks	src/me_fullfast.c	/^SetupLargerBlocks (int list, int refindex, int max/
+SliceHeader	src/header.c	/^int SliceHeader()$/
+Sort	src/leaky_bucket.c	/^void Sort(unsigned long NumberLeakyBuckets, unsign/
+StoreMV8x8	src/rdopt.c	/^void StoreMV8x8(int dir)$/
+StoreMVBlock8x8	src/rdopt.c	/^void StoreMVBlock8x8(int dir, int block8x8, int mo/
+StoreNewMotionVectorsBlock8x8	src/rdopt.c	/^void StoreNewMotionVectorsBlock8x8(int dir, int bl/
+SubPelBlockMotionSearch	src/me_fullsearch.c	/^SubPelBlockMotionSearch (imgpel*   orig_pic,      /
+SubPelBlockSearchBiPred	src/me_fullsearch.c	/^SubPelBlockSearchBiPred (imgpel*   orig_pic,      /
+TRACE_SE	src/macroblock.c	/^#define TRACE_SE(trace,str)  snprintf(trace,TRACES/
+TestEncoderParams	src/configfile.c	/^static int TestEncoderParams(int bitdepth_qp_scale/
+TransformDecision	src/macroblock.c	/^int TransformDecision (int block_check, int *cost)/
+UMHEXBipredIntegerPelBlockMotionSearch	src/me_umhex.c	/^UMHEXBipredIntegerPelBlockMotionSearch (imgpel*   /
+UMHEXIntegerPelBlockMotionSearch	src/me_umhex.c	/^UMHEXIntegerPelBlockMotionSearch  ($/
+UMHEXSetMotionVectorPredictor	src/me_umhex.c	/^void UMHEXSetMotionVectorPredictor (short  pmv[2],/
+UMHEXSubPelBlockMotionSearch	src/me_umhex.c	/^UMHEXSubPelBlockMotionSearch (imgpel*   orig_pic, /
+UMHEX_DefineThreshold	src/me_umhex.c	/^void UMHEX_DefineThreshold()$/
+UMHEX_DefineThresholdMB	src/me_umhex.c	/^void UMHEX_DefineThresholdMB()$/
+UMHEX_decide_intrabk_SAD	src/me_umhex.c	/^void UMHEX_decide_intrabk_SAD()$/
+UMHEX_free_mem	src/me_umhex.c	/^void UMHEX_free_mem()$/
+UMHEX_get_mem	src/me_umhex.c	/^int UMHEX_get_mem()$/
+UMHEX_setup	src/me_umhex.c	/^void UMHEX_setup(short ref, int list, int block_y,/
+UMHEX_skip_intrabk_SAD	src/me_umhex.c	/^void UMHEX_skip_intrabk_SAD(int best_mode, int ref/
+UMVLine4X	src/refbuf.c	/^imgpel *UMVLine4X (imgpel ****Pic, int y, int x)$/
+UMVLine8X_chroma	src/refbuf.c	/^imgpel *UMVLine8X_chroma (imgpel ****Pic, int y, i/
+UnifiedOneForthPix	src/image.c	/^void UnifiedOneForthPix (StorablePicture *s)$/
+UpdateBufferingPeriod	src/sei.c	/^void UpdateBufferingPeriod()$/
+UpdateDecoders	src/decoder.c	/^void UpdateDecoders()$/
+UpdatePanScanRectInfo	src/sei.c	/^void UpdatePanScanRectInfo()$/
+UpdatePicTiming	src/sei.c	/^void UpdatePicTiming()$/
+UpdatePixelMap	src/rdopt.c	/^void UpdatePixelMap()$/
+UpdatePostFilterHints	src/sei.c	/^void UpdatePostFilterHints()$/
+UpdateRandomAccess	src/sei.c	/^void UpdateRandomAccess()$/
+UpdateSceneInformation	src/sei.c	/^void UpdateSceneInformation(Boolean HasSceneInform/
+UpdateSubseqChar	src/sei.c	/^void UpdateSubseqChar()$/
+UpdateSubseqInfo	src/sei.c	/^void UpdateSubseqInfo(int currLayer)$/
+UpdateToneMapping	src/sei.c	/^void UpdateToneMapping() $/
+UpdateUser_data_registered_itu_t_t35	src/sei.c	/^void UpdateUser_data_registered_itu_t_t35()$/
+UpdateUser_data_unregistered	src/sei.c	/^void UpdateUser_data_unregistered()$/
+WEIGHTED_COST	inc/defines.h	/^#define  WEIGHTED_COST(factor,bits)   (((factor)*(/
+WriteAnnexbNALU	src/annexb.c	/^int WriteAnnexbNALU (NALU_t *n)$/
+WriteHRDParameters	src/parset.c	/^int WriteHRDParameters(seq_parameter_set_rbsp_t *s/
+WriteRTPNALU	src/rtp.c	/^int WriteRTPNALU (NALU_t *n)$/
+WriteRTPPacket	src/rtp.c	/^int WriteRTPPacket (RTPpacket_t *p, FILE *f)$/
+Write_SEI_NALU	src/sei.c	/^int Write_SEI_NALU(int len)$/
+XRate	src/context_ini.c	/^double XRate (BiContextTypePtr ctx, const int* mod/
+ZeroRef	src/macroblock.c	/^int ZeroRef (Macroblock* currMB)$/
+_put_last_chunk_plus_outstanding	src/biariencode.c	/^#define _put_last_chunk_plus_outstanding(l) { \\$/
+_put_last_chunk_plus_outstanding_final	src/biariencode.c	/^#define _put_last_chunk_plus_outstanding_final(l) /
+adaptive_memory_management	src/mbuffer.c	/^static void adaptive_memory_management(StorablePic/
+adjust_mb16x16_cost	src/mode_decision.c	/^void adjust_mb16x16_cost(int cost)$/
+aggregationRTPWriteBits	src/rtp.c	/^int aggregationRTPWriteBits (int Marker, int Packe/
+allocEPZScolocated	src/me_epzs.c	/^static EPZSColocParams* allocEPZScolocated(int siz/
+allocEPZSpattern	src/me_epzs.c	/^static EPZSStructure* allocEPZSpattern(int searchp/
+alloc_colocated	src/mbuffer.c	/^ColocatedParams* alloc_colocated(int size_x, int s/
+alloc_frame_store	src/mbuffer.c	/^FrameStore* alloc_frame_store(void)$/
+alloc_ref_pic_list_reordering_buffer	src/mbuffer.c	/^void alloc_ref_pic_list_reordering_buffer(Slice *c/
+alloc_storable_picture	src/mbuffer.c	/^StorablePicture* alloc_storable_picture(PictureStr/
+allocate_QMatrix	src/q_matrix.c	/^void allocate_QMatrix ()$/
+allocate_QOffsets	src/q_offsets.c	/^void allocate_QOffsets ()$/
+arienco_bits_written	src/biariencode.c	/^int arienco_bits_written(EncodingEnvironmentPtr ee/
+arienco_create_encoding_environment	src/biariencode.c	/^EncodingEnvironmentPtr arienco_create_encoding_env/
+arienco_delete_encoding_environment	src/biariencode.c	/^void arienco_delete_encoding_environment(EncodingE/
+arienco_done_encoding	src/biariencode.c	/^void arienco_done_encoding(EncodingEnvironmentPtr /
+arienco_start_encoding	src/biariencode.c	/^void arienco_start_encoding(EncodingEnvironmentPtr/
+assignEPZSpattern	src/me_epzs.c	/^static void assignEPZSpattern(EPZSStructure *patte/
+assign_enc_picture_params	src/rdopt.c	/^void assign_enc_picture_params(int mode, char best/
+begin_sub_sequence_rtp	src/rtp.c	/^void begin_sub_sequence_rtp()$/
+biari_encode_symbol	src/biariencode.c	/^void biari_encode_symbol(EncodingEnvironmentPtr ee/
+biari_encode_symbol_eq_prob	src/biariencode.c	/^void biari_encode_symbol_eq_prob(EncodingEnvironme/
+biari_encode_symbol_final	src/biariencode.c	/^void biari_encode_symbol_final(EncodingEnvironment/
+biari_init_context	src/biariencode.c	/^void biari_init_context (BiContextTypePtr ctx, con/
+buf2img	src/image.c	/^void buf2img ( imgpel** imgX,           \/\/!< Point/
+cabac_new_slice	src/cabac.c	/^void cabac_new_slice(void)$/
+calc_MAD	src/ratectl.c	/^int calc_MAD()$/
+calc_buffer	src/leaky_bucket.c	/^void calc_buffer()$/
+cbp_linfo_inter	src/vlc.c	/^void cbp_linfo_inter(int cbp, int dummy, int *len,/
+cbp_linfo_intra	src/vlc.c	/^void cbp_linfo_intra(int cbp, int dummy, int *len,/
+check_for_SI16	src/mode_decision.c	/^int check_for_SI16()$/
+check_num_ref	src/mbuffer.c	/^void check_num_ref(void)$/
+chroma_mc_setup	src/lencod.c	/^void chroma_mc_setup(void)$/
+clear_gop_structure	src/explicit_gop.c	/^void clear_gop_structure()$/
+clear_picture	src/output.c	/^void clear_picture(StorablePicture *p)$/
+clear_rdopt	src/rdopt.c	/^void clear_rdopt ()$/
+clear_sei_message	src/sei.c	/^void clear_sei_message(int id)$/
+code_a_picture	src/image.c	/^void code_a_picture(Picture *pic)$/
+combine_field	src/lencod.c	/^void combine_field(void)$/
+compare_fs_by_frame_num_desc	src/mbuffer.c	/^static int compare_fs_by_frame_num_desc( const voi/
+compare_fs_by_lt_pic_idx_asc	src/mbuffer.c	/^static int compare_fs_by_lt_pic_idx_asc( const voi/
+compare_fs_by_poc_asc	src/mbuffer.c	/^static int compare_fs_by_poc_asc( const void *arg1/
+compare_fs_by_poc_desc	src/mbuffer.c	/^static int compare_fs_by_poc_desc( const void *arg/
+compare_pic_by_lt_pic_num_asc	src/mbuffer.c	/^static int compare_pic_by_lt_pic_num_asc( const vo/
+compare_pic_by_pic_num_desc	src/mbuffer.c	/^static int compare_pic_by_pic_num_desc( const void/
+compare_pic_by_poc_asc	src/mbuffer.c	/^static int compare_pic_by_poc_asc( const void *arg/
+compare_pic_by_poc_desc	src/mbuffer.c	/^static int compare_pic_by_poc_desc( const void *ar/
+computeBiPredSAD1	src/me_distortion.c	/^int computeBiPredSAD1(imgpel* src_pic,$/
+computeBiPredSAD2	src/me_distortion.c	/^int computeBiPredSAD2(imgpel* src_pic,$/
+computeBiPredSATD1	src/me_distortion.c	/^int computeBiPredSATD1(imgpel* src_pic,$/
+computeBiPredSATD2	src/me_distortion.c	/^int computeBiPredSATD2(imgpel* src_pic,$/
+computeBiPredSSE1	src/me_distortion.c	/^int computeBiPredSSE1(imgpel* src_pic,$/
+computeBiPredSSE2	src/me_distortion.c	/^int computeBiPredSSE2(imgpel* src_pic,$/
+computeSAD	src/me_distortion.c	/^int computeSAD(imgpel* src_pic,$/
+computeSADWP	src/me_distortion.c	/^int computeSADWP(imgpel* src_pic,$/
+computeSATD	src/me_distortion.c	/^int computeSATD(imgpel* src_pic,$/
+computeSATDWP	src/me_distortion.c	/^int computeSATDWP(imgpel* src_pic,$/
+computeSSE	src/me_distortion.c	/^int computeSSE(imgpel* src_pic,$/
+computeSSEWP	src/me_distortion.c	/^int computeSSEWP(imgpel* src_pic,$/
+compute_colocated	src/mbuffer.c	/^void compute_colocated(ColocatedParams* p, Storabl/
+compute_deblock_strength	src/loopFilter.c	/^int compute_deblock_strength(char **list0_refIdxAr/
+compute_mode_RD_cost	src/mode_decision.c	/^void compute_mode_RD_cost(int mode,$/
+compute_ref_cost	src/mode_decision.c	/^int compute_ref_cost(RD_PARAMS enc_mb, int ref, in/
+compute_residue_b8block	src/decoder.c	/^void compute_residue_b8block (int b8block, int i16/
+compute_residue_mb	src/decoder.c	/^void compute_residue_mb (int i16mode)$/
+copy_motion_vectors_MB	src/image.c	/^static void copy_motion_vectors_MB (void)$/
+copy_params	src/image.c	/^void copy_params(void)$/
+copy_rc_generic	src/ratectl.c	/^void copy_rc_generic( rc_generic *dst, rc_generic /
+copy_rc_jvt	src/rc_quadratic.c	/^void copy_rc_jvt( rc_quadratic *dst, rc_quadratic /
+copy_rdopt_data	src/image.c	/^void copy_rdopt_data (int bot_block)$/
+copyblock_sp	src/block.c	/^void copyblock_sp(int block_x,int block_y)$/
+create_coding_state	src/rdopt_coding_state.c	/^create_coding_state ()$/
+create_context_memory	src/context_ini.c	/^void create_context_memory ()$/
+create_contexts_MotionInfo	src/cabac.c	/^MotionInfoContexts* create_contexts_MotionInfo(voi/
+create_contexts_TextureInfo	src/cabac.c	/^TextureInfoContexts* create_contexts_TextureInfo(v/
+create_hierarchy	src/explicit_gop.c	/^void create_hierarchy()$/
+dClip3	inc/ifunctions.h	/^static inline double dClip3(double low, double hig/
+dabs	inc/ifunctions.h	/^static inline double dabs(double x)$/
+dabs2	inc/ifunctions.h	/^static inline double dabs2(double x)$/
+dct_chroma	src/block.c	/^int dct_chroma(int uv,int cr_cbp)$/
+dct_chroma_sp	src/block.c	/^int dct_chroma_sp(int uv,int cr_cbp)$/
+dct_chroma_sp2	src/block.c	/^int dct_chroma_sp2(int uv,int cr_cbp)$/
+dct_luma	src/block.c	/^int dct_luma(int block_x,int block_y,int *coeff_co/
+dct_luma8x8	src/transform8x8.c	/^int dct_luma8x8(int b8,int *coeff_cost, int intra)/
+dct_luma_16x16	src/block.c	/^int dct_luma_16x16(int new_intra_mode)$/
+dct_luma_sp	src/block.c	/^int dct_luma_sp(int block_x,int block_y,int *coeff/
+dct_luma_sp2	src/block.c	/^int dct_luma_sp2(int block_x,int block_y,int *coef/
+dec_ref_pic_marking	src/header.c	/^static int dec_ref_pic_marking(Bitstream *bitstrea/
+decide_fld_frame	src/lencod.c	/^int decide_fld_frame(float snr_frame_Y, float snr_/
+decode_one_b8block	src/decoder.c	/^void decode_one_b8block (int decoder, int mbmode, /
+decode_one_mb	src/decoder.c	/^void decode_one_mb (int decoder, Macroblock* currM/
+delete_coding_state	src/rdopt_coding_state.c	/^delete_coding_state (CSptr cs)$/
+delete_contexts_MotionInfo	src/cabac.c	/^void delete_contexts_MotionInfo(MotionInfoContexts/
+delete_contexts_TextureInfo	src/cabac.c	/^void delete_contexts_TextureInfo(TextureInfoContex/
+determine_prediction_list	src/mode_decision.c	/^void determine_prediction_list(int mode, int bmcos/
+direct_output	src/output.c	/^void direct_output(StorablePicture *p, int p_out)$/
+direct_output_paff	src/output.c	/^void direct_output_paff(StorablePicture *p, int p_/
+distortion4x4	src/me_distortion.c	/^int distortion4x4(int* diff)$/
+distortion8x8	src/me_distortion.c	/^int distortion8x8(int* diff)$/
+distortion_fld	src/image.c	/^static void distortion_fld (float *dis_fld_y, floa/
+dmax	inc/ifunctions.h	/^static inline double dmax(double a, double b)$/
+dmin	inc/ifunctions.h	/^static inline double dmin(double a, double b)$/
+dpb_combine_field	src/mbuffer.c	/^void dpb_combine_field(FrameStore *fs)$/
+dpb_combine_field_yuv	src/mbuffer.c	/^void dpb_combine_field_yuv(FrameStore *fs)$/
+dpb_split_field	src/mbuffer.c	/^void dpb_split_field(FrameStore *fs)$/
+dummy_slice_too_big	src/image.c	/^Boolean dummy_slice_too_big (int bits_slice)$/
+dump_dpb	src/mbuffer.c	/^void dump_dpb(void)$/
+encode_enhancement_layer	src/explicit_gop.c	/^void encode_enhancement_layer()$/
+encode_one_frame	src/image.c	/^int encode_one_frame (void)$/
+encode_one_macroblock_high	src/md_high.c	/^void encode_one_macroblock_high ()$/
+encode_one_macroblock_highfast	src/md_highfast.c	/^void encode_one_macroblock_highfast ()$/
+encode_one_macroblock_highloss	src/md_highloss.c	/^void encode_one_macroblock_highloss ()$/
+encode_one_macroblock_low	src/md_low.c	/^void encode_one_macroblock_low ()$/
+encode_one_redundant_frame	src/lencod.c	/^void encode_one_redundant_frame()$/
+encode_one_slice	src/slice.c	/^int encode_one_slice (int SliceGroupId, Picture *p/
+end_sub_sequence_rtp	src/rtp.c	/^void end_sub_sequence_rtp()$/
+error	src/filehandle.c	/^void error(char *text, int code)$/
+estimate_weighting_factor_B_slice	src/weighted_prediction.c	/^void estimate_weighting_factor_B_slice()$/
+estimate_weighting_factor_P_slice	src/weighted_prediction.c	/^void estimate_weighting_factor_P_slice(int select_/
+exp_golomb_encode_eq_prob	src/cabac.c	/^void exp_golomb_encode_eq_prob( EncodingEnvironmen/
+fast_mode_intra_decision	src/mode_decision.c	/^void fast_mode_intra_decision(short *intra_skip, d/
+field_flag_inference	src/rdopt.c	/^int field_flag_inference()$/
+field_mode_buffer	src/image.c	/^static void field_mode_buffer (int bit_field, floa/
+field_picture	src/image.c	/^void field_picture (Picture *top, Picture *bottom)/
+fill_frame_num_gap	src/mbuffer.c	/^void fill_frame_num_gap(ImageParameters *img)$/
+finalize_sei_message	src/sei.c	/^void finalize_sei_message(int id)$/
+find_distortion	src/image.c	/^static void find_distortion (void)$/
+find_sad_16x16	src/macroblock.c	/^int find_sad_16x16(int *intra_mode)$/
+find_snr	src/image.c	/^static void find_snr (void)$/
+flush_direct_output	src/output.c	/^void flush_direct_output(int p_out)$/
+flush_dpb	src/mbuffer.c	/^void flush_dpb(void)$/
+frame_mode_buffer	src/image.c	/^static void frame_mode_buffer (int bit_frame, floa/
+frame_picture	src/image.c	/^void frame_picture (Picture *frame, int rd_pass)$/
+freeEPZScolocated	src/me_epzs.c	/^static void freeEPZScolocated(EPZSColocParams* p)$/
+freeEPZSpattern	src/me_epzs.c	/^static void freeEPZSpattern(EPZSStructure* p)$/
+free_QMatrix	src/q_matrix.c	/^void free_QMatrix ()$/
+free_QOffsets	src/q_offsets.c	/^void free_QOffsets ()$/
+free_colocated	src/mbuffer.c	/^void free_colocated(ColocatedParams* p)$/
+free_context_memory	src/context_ini.c	/^void free_context_memory ()$/
+free_dpb	src/mbuffer.c	/^void free_dpb(void)$/
+free_frame_store	src/mbuffer.c	/^void free_frame_store(FrameStore* f)$/
+free_global_buffers	src/lencod.c	/^void free_global_buffers(void)$/
+free_img	src/lencod.c	/^void free_img ()$/
+free_mem2D	src/memalloc.c	/^void free_mem2D(byte **array2D)$/
+free_mem2Ddb_offset	src/memalloc.c	/^void free_mem2Ddb_offset(double **array2D, int off/
+free_mem2Ddouble	src/memalloc.c	/^void free_mem2Ddouble(double **array2D)$/
+free_mem2Dint	src/memalloc.c	/^void free_mem2Dint(int **array2D)$/
+free_mem2Dint64	src/memalloc.c	/^void free_mem2Dint64(int64 **array2D)$/
+free_mem2Dint_offset	src/memalloc.c	/^void free_mem2Dint_offset(int **array2D, int offse/
+free_mem2Dpel	src/memalloc.c	/^void free_mem2Dpel(imgpel **array2D)$/
+free_mem2Dshort	src/memalloc.c	/^void free_mem2Dshort(short **array2D)$/
+free_mem3D	src/memalloc.c	/^void free_mem3D(byte ***array3D, int frames)$/
+free_mem3Ddb_offset	src/memalloc.c	/^void free_mem3Ddb_offset(double ***array3D, int ro/
+free_mem3Dint	src/memalloc.c	/^void free_mem3Dint(int ***array3D, int frames)$/
+free_mem3Dint64	src/memalloc.c	/^void free_mem3Dint64(int64 ***array3D, int frames)/
+free_mem3Dint_offset	src/memalloc.c	/^void free_mem3Dint_offset(int ***array3D, int rows/
+free_mem3Dpel	src/memalloc.c	/^void free_mem3Dpel(imgpel ***array3D, int frames)$/
+free_mem3Dshort	src/memalloc.c	/^void free_mem3Dshort(short ***array3D, int frames)/
+free_mem4Dint	src/memalloc.c	/^void free_mem4Dint(int ****array4D, int idx, int f/
+free_mem4Dpel	src/memalloc.c	/^void free_mem4Dpel(imgpel ****array4D, int sub_x, /
+free_mem4Dshort	src/memalloc.c	/^void free_mem4Dshort(short ****array4D, int idx, i/
+free_mem5Dint	src/memalloc.c	/^void free_mem5Dint(int *****array5D, int refs, int/
+free_mem5Dpel	src/memalloc.c	/^void free_mem5Dpel(imgpel *****array5D, int dims, /
+free_mem5Dshort	src/memalloc.c	/^void free_mem5Dshort(short *****array5D, int refs,/
+free_mem6Dshort	src/memalloc.c	/^void free_mem6Dshort(short ******array6D, int list/
+free_mem_ACcoeff	src/lencod.c	/^void free_mem_ACcoeff (int**** cofAC)$/
+free_mem_DCcoeff	src/lencod.c	/^void free_mem_DCcoeff (int*** cofDC)$/
+free_mem_mv	src/lencod.c	/^void free_mem_mv (short****** mv)$/
+free_orig_planes	src/lencod.c	/^void free_orig_planes(void)$/
+free_picture	src/lencod.c	/^void free_picture(Picture *pic)$/
+free_ref_pic_list_reordering_buffer	src/mbuffer.c	/^void free_ref_pic_list_reordering_buffer(Slice *cu/
+free_slice	src/slice.c	/^static void free_slice(Slice *slice)$/
+free_slice_list	src/slice.c	/^void free_slice_list(Picture *currPic)$/
+free_storable_picture	src/mbuffer.c	/^void free_storable_picture(StorablePicture* p)$/
+free_top_bot_planes	src/memalloc.c	/^void free_top_bot_planes(imgpel **imgTopField, img/
+gen_field_ref_ids	src/mbuffer.c	/^void gen_field_ref_ids(StorablePicture *p)$/
+gen_pic_list_from_frame_list	src/mbuffer.c	/^static void gen_pic_list_from_frame_list(PictureSt/
+generic_alloc	src/ratectl.c	/^void generic_alloc( rc_generic **prc )$/
+generic_free	src/ratectl.c	/^void generic_free(rc_generic **prc)$/
+getAffNeighbour	src/mb_access.c	/^void getAffNeighbour(unsigned int curr_mb_nr, int /
+getChroma4x4Neighbour	src/mb_access.c	/^void getChroma4x4Neighbour (int curr_mb_nr, int bl/
+getDiagSubImageBiLinear	src/img_luma.c	/^void getDiagSubImageBiLinear( StorablePicture *s, /
+getDpbSize	src/mbuffer.c	/^int getDpbSize(void)$/
+getHorSubImageBiLinear	src/img_luma.c	/^void getHorSubImageBiLinear( StorablePicture *s, i/
+getHorSubImageSixTap	src/img_luma.c	/^void getHorSubImageSixTap( StorablePicture *s, int/
+getLuma4x4Neighbour	src/mb_access.c	/^void getLuma4x4Neighbour (int curr_mb_nr, int bloc/
+getMaxFs	src/configfile.c	/^unsigned getMaxFs (unsigned int levelIdc)$/
+getNonAffNeighbour	src/mb_access.c	/^void getNonAffNeighbour(unsigned int curr_mb_nr, i/
+getSubImagesChroma	src/img_chroma.c	/^void getSubImagesChroma( StorablePicture *s )$/
+getSubImagesLuma	src/img_luma.c	/^void getSubImagesLuma( StorablePicture *s )$/
+getVerSubImageBiLinear	src/img_luma.c	/^void getVerSubImageBiLinear( StorablePicture *s, i/
+getVerSubImageSixTap	src/img_luma.c	/^void getVerSubImageSixTap( StorablePicture *s, int/
+get_LeakyBucketRate	src/leaky_bucket.c	/^int get_LeakyBucketRate(unsigned long NumberLeakyB/
+get_initial_mb16x16_cost	src/mode_decision.c	/^void get_initial_mb16x16_cost()$/
+get_long_term_pic	src/mbuffer.c	/^static StorablePicture*  get_long_term_pic(int Lon/
+get_mb_block_pos_mbaff	src/mb_access.c	/^void get_mb_block_pos_mbaff (int mb_addr, int *x, /
+get_mb_block_pos_normal	src/mb_access.c	/^void get_mb_block_pos_normal (int mb_addr, int *x,/
+get_mb_pos	src/mb_access.c	/^void get_mb_pos (int mb_addr, int *x, int*y, int i/
+get_mem2D	src/memalloc.c	/^int get_mem2D(byte ***array2D, int rows, int colum/
+get_mem2Ddb_offset	src/memalloc.c	/^int get_mem2Ddb_offset(double ***array2D, int rows/
+get_mem2Ddouble	src/memalloc.c	/^int get_mem2Ddouble(double ***array2D, int rows, i/
+get_mem2Dint	src/memalloc.c	/^int get_mem2Dint(int ***array2D, int rows, int col/
+get_mem2Dint64	src/memalloc.c	/^int get_mem2Dint64(int64 ***array2D, int rows, int/
+get_mem2Dint_offset	src/memalloc.c	/^int get_mem2Dint_offset(int ***array2D, int rows, /
+get_mem2Dpel	src/memalloc.c	/^int get_mem2Dpel(imgpel ***array2D, int rows, int /
+get_mem2Dshort	src/memalloc.c	/^int get_mem2Dshort(short ***array2D, int rows, int/
+get_mem3D	src/memalloc.c	/^int get_mem3D(byte ****array3D, int frames, int ro/
+get_mem3Ddb_offset	src/memalloc.c	/^int get_mem3Ddb_offset(double ****array3D, int row/
+get_mem3Dint	src/memalloc.c	/^int get_mem3Dint(int ****array3D, int frames, int /
+get_mem3Dint64	src/memalloc.c	/^int get_mem3Dint64(int64 ****array3D, int frames, /
+get_mem3Dint_offset	src/memalloc.c	/^int get_mem3Dint_offset(int ****array3D, int rows,/
+get_mem3Dpel	src/memalloc.c	/^int get_mem3Dpel(imgpel ****array3D, int frames, i/
+get_mem3Dshort	src/memalloc.c	/^int get_mem3Dshort(short ****array3D, int frames, /
+get_mem4Dint	src/memalloc.c	/^int get_mem4Dint(int *****array4D, int idx, int fr/
+get_mem4Dpel	src/memalloc.c	/^int get_mem4Dpel(imgpel *****array4D, int sub_x, i/
+get_mem4Dshort	src/memalloc.c	/^int get_mem4Dshort(short *****array4D, int idx, in/
+get_mem5Dint	src/memalloc.c	/^int get_mem5Dint(int ******array5D, int refs, int /
+get_mem5Dpel	src/memalloc.c	/^int get_mem5Dpel(imgpel ******array5D, int dims, i/
+get_mem5Dshort	src/memalloc.c	/^int get_mem5Dshort(short ******array5D, int refs, /
+get_mem6Dshort	src/memalloc.c	/^int get_mem6Dshort(short *******array6D, int list,/
+get_mem_ACcoeff	src/lencod.c	/^int get_mem_ACcoeff (int***** cofAC)$/
+get_mem_DCcoeff	src/lencod.c	/^int get_mem_DCcoeff (int**** cofDC)$/
+get_mem_mv	src/lencod.c	/^int get_mem_mv (short ******* mv)$/
+get_pic_bin_count	src/biariencode.c	/^int get_pic_bin_count(void)$/
+get_pic_num_x	src/mbuffer.c	/^static int get_pic_num_x (StorablePicture *p, int /
+get_picture_type	src/header.c	/^int get_picture_type()$/
+get_short_term_pic	src/mbuffer.c	/^static StorablePicture*  get_short_term_pic(int pi/
+get_smallest_poc	src/mbuffer.c	/^static void get_smallest_poc(int *poc,int * pos)$/
+handle_qp	src/ratectl.c	/^void handle_qp(Macroblock *currMB, short best_mode/
+i64abs	inc/ifunctions.h	/^static inline int64 i64abs(int64 x)$/
+i64abs2	inc/ifunctions.h	/^static inline int64 i64abs2(int64 x)$/
+i64max	inc/ifunctions.h	/^static inline int64 i64max(int64 a, int64 b)$/
+i64min	inc/ifunctions.h	/^static inline int64 i64min(int64 a, int64 b)$/
+iClip1	inc/ifunctions.h	/^static inline int iClip1(int high, int x)$/
+iClip3	inc/ifunctions.h	/^static inline int iClip3(int low, int high, int x)/
+iabs	inc/ifunctions.h	/^static inline int iabs(int x)$/
+iabs2	inc/ifunctions.h	/^static inline int iabs2(int x) {$/
+idr_memory_management	src/mbuffer.c	/^static void idr_memory_management(StorablePicture*/
+imax	inc/ifunctions.h	/^static inline int imax(int a, int b)$/
+img2buf	src/output.c	/^void img2buf (imgpel** imgX, unsigned char* buf, i/
+imin	inc/ifunctions.h	/^static inline int imin(int a, int b)$/
+information_init	src/lencod.c	/^void information_init(void)$/
+init_contexts	src/context_ini.c	/^void init_contexts ()$/
+init_dec_ref_pic_marking_buffer	src/image.c	/^static void init_dec_ref_pic_marking_buffer(void)$/
+init_dpb	src/mbuffer.c	/^void init_dpb(void)$/
+init_enc_mb_params	src/mode_decision.c	/^void init_enc_mb_params(Macroblock* currMB, RD_PAR/
+init_field	src/image.c	/^static void init_field (void)$/
+init_frame	src/image.c	/^static void init_frame (void)$/
+init_global_buffers	src/lencod.c	/^int init_global_buffers(void)$/
+init_gop_structure	src/explicit_gop.c	/^void init_gop_structure()$/
+init_img	src/lencod.c	/^void init_img()$/
+init_lists	src/mbuffer.c	/^void init_lists(int currSliceType, PictureStructur/
+init_mbaff_lists	src/mbuffer.c	/^void init_mbaff_lists(void)$/
+init_orig_buffers	src/lencod.c	/^int init_orig_buffers(void)$/
+init_out_buffer	src/output.c	/^void init_out_buffer()$/
+init_poc	src/lencod.c	/^void init_poc()$/
+init_rdopt	src/rdopt.c	/^void init_rdopt ()$/
+init_ref_pic_list_reordering	src/slice.c	/^void init_ref_pic_list_reordering()$/
+init_slice	src/slice.c	/^static void init_slice (int start_mb_addr)$/
+init_stats	src/lencod.c	/^void init_stats (void)$/
+init_top_bot_planes	src/memalloc.c	/^int init_top_bot_planes(imgpel **imgFrame, int row/
+insert_picture_in_dpb	src/mbuffer.c	/^static void insert_picture_in_dpb(FrameStore* fs, /
+interpret_gop_structure	src/explicit_gop.c	/^void interpret_gop_structure()$/
+intrapred_luma	src/block.c	/^void intrapred_luma(int img_x,int img_y, int *left/
+intrapred_luma8x8	src/transform8x8.c	/^void intrapred_luma8x8(int img_x,int img_y, int *l/
+intrapred_luma_16x16	src/block.c	/^void intrapred_luma_16x16()$/
+isAggregationPacket	src/rtp.c	/^Boolean isAggregationPacket()$/
+is_long_ref	src/mbuffer.c	/^int is_long_ref(StorablePicture *s)$/
+is_long_term_reference	src/mbuffer.c	/^static int is_long_term_reference(FrameStore* fs)$/
+is_short_ref	src/mbuffer.c	/^int is_short_ref(StorablePicture *s)$/
+is_short_term_reference	src/mbuffer.c	/^static int is_short_term_reference(FrameStore* fs)/
+is_used_for_reference	src/mbuffer.c	/^static int is_used_for_reference(FrameStore* fs)$/
+isign	inc/ifunctions.h	/^static inline int isign(int x)$/
+isignab	inc/ifunctions.h	/^static inline int isignab(int a, int b)$/
+levrun_linfo_c2x2	src/vlc.c	/^void levrun_linfo_c2x2(int level,int run,int *len,/
+levrun_linfo_inter	src/vlc.c	/^void levrun_linfo_inter(int level,int run,int *len/
+list_prediction_cost	src/mode_decision.c	/^void list_prediction_cost(int list, int block, int/
+malloc_picture	src/lencod.c	/^Picture *malloc_picture()$/
+malloc_slice	src/slice.c	/^static Slice *malloc_slice()$/
+mark_pic_long_term	src/mbuffer.c	/^static void mark_pic_long_term(StorablePicture* p,/
+mb_is_available	src/mb_access.c	/^int mb_is_available(int mbAddr, int currMbAddr)$/
+mm_assign_long_term_frame_idx	src/mbuffer.c	/^static void mm_assign_long_term_frame_idx(Storable/
+mm_mark_current_picture_long_term	src/mbuffer.c	/^static void mm_mark_current_picture_long_term(Stor/
+mm_unmark_all_long_term_for_reference	src/mbuffer.c	/^static void mm_unmark_all_long_term_for_reference /
+mm_unmark_all_short_term_for_reference	src/mbuffer.c	/^static void mm_unmark_all_short_term_for_reference/
+mm_unmark_long_term_for_reference	src/mbuffer.c	/^static void mm_unmark_long_term_for_reference(Stor/
+mm_unmark_short_term_for_reference	src/mbuffer.c	/^static void mm_unmark_short_term_for_reference(Sto/
+mm_update_max_long_term_frame_idx	src/mbuffer.c	/^void mm_update_max_long_term_frame_idx(int max_lon/
+no_mem_exit	src/memalloc.c	/^void no_mem_exit(char *where)$/
+output_SP_coefficients	src/image.c	/^void output_SP_coefficients()$/
+output_one_frame_from_dpb	src/mbuffer.c	/^static void output_one_frame_from_dpb(void)$/
+picture_coding_decision	src/rdpicdecision.c	/^int picture_coding_decision (Picture *picture1, Pi/
+picture_structure_decision	src/image.c	/^static int picture_structure_decision (Picture *fr/
+poc_based_ref_management	src/explicit_gop.c	/^void poc_based_ref_management(int current_pic_num)/
+poc_ref_pic_reorder	src/slice.c	/^void poc_ref_pic_reorder(StorablePicture **list, u/
+pred_weight_table	src/header.c	/^static int pred_weight_table(Bitstream *bitstream)/
+predictCurrPicMAD	src/rc_quadratic.c	/^void predictCurrPicMAD( rc_quadratic *prc )$/
+predict_nnz	src/macroblock.c	/^int predict_nnz(int i,int j)$/
+predict_nnz_chroma	src/macroblock.c	/^int predict_nnz_chroma(int i,int j)$/
+proceed2nextMacroblock	src/macroblock.c	/^void proceed2nextMacroblock(void)$/
+process_2nd_IGOP	src/lencod.c	/^void process_2nd_IGOP(void)$/
+propagate_carry	src/biariencode.c	/^void propagate_carry(EncodingEnvironmentPtr eep)$/
+put_buffer	src/biariencode.c	/^void put_buffer(EncodingEnvironmentPtr eep)$/
+put_buffer_bot	src/image.c	/^static void put_buffer_bot(void)$/
+put_buffer_frame	src/image.c	/^static void put_buffer_frame(void)$/
+put_buffer_top	src/image.c	/^static void put_buffer_top(void)$/
+put_one_byte	src/biariencode.c	/^#define put_one_byte(b) { \\$/
+put_one_byte_final	src/biariencode.c	/^#define put_one_byte_final(b) { \\$/
+put_one_word	src/biariencode.c	/^#define put_one_word(b) { \\$/
+rc_alloc	src/rc_quadratic.c	/^void rc_alloc( rc_quadratic **prc )$/
+rc_free	src/rc_quadratic.c	/^void rc_free(rc_quadratic **prc)$/
+rc_init_GOP	src/rc_quadratic.c	/^void rc_init_GOP(rc_quadratic *prc, int np, int nb/
+rc_init_pict	src/rc_quadratic.c	/^void rc_init_pict(rc_quadratic *prc, int fieldpic,/
+rc_init_seq	src/rc_quadratic.c	/^void rc_init_seq(rc_quadratic *prc)$/
+rc_store_diff	src/mode_decision.c	/^void rc_store_diff(int cpix_x, int cpix_y, imgpel /
+rc_update_pict	src/rc_quadratic.c	/^void rc_update_pict(rc_quadratic *prc, int nbits)$/
+rc_update_pict_frame	src/rc_quadratic.c	/^void rc_update_pict_frame(rc_quadratic *prc, int n/
+rdPictureCoding	src/image.c	/^static void rdPictureCoding(void)$/
+rd_pic_decision	src/rdpicdecision.c	/^int rd_pic_decision(double snrY_version1, double s/
+read_SP_coefficients	src/image.c	/^void read_SP_coefficients()$/
+read_slice_group_info	src/configfile.c	/^void read_slice_group_info()$/
+ref_pic_list_reordering	src/header.c	/^static int ref_pic_list_reordering(Bitstream *bits/
+remove_frame_from_dpb	src/mbuffer.c	/^static void remove_frame_from_dpb(int pos)$/
+remove_unused_frame_from_dpb	src/mbuffer.c	/^static int remove_unused_frame_from_dpb(void)$/
+reorder_long_term	src/mbuffer.c	/^static void reorder_long_term(StorablePicture **Re/
+reorder_ref_pic_list	src/mbuffer.c	/^void reorder_ref_pic_list(StorablePicture **list, /
+reorder_short_term	src/mbuffer.c	/^static void reorder_short_term(StorablePicture **R/
+replace_top_pic_with_frame	src/mbuffer.c	/^void replace_top_pic_with_frame(StorablePicture* p/
+report	src/lencod.c	/^void report()$/
+report_frame_statistic	src/lencod.c	/^void report_frame_statistic()$/
+report_stats_on_error	src/lencod.c	/^void report_stats_on_error(void)$/
+reset_coding_state	src/rdopt_coding_state.c	/^void reset_coding_state (CSptr cs)$/
+reset_coding_state_cs_cm	src/rdopt.c	/^void reset_coding_state_cs_cm()$/
+reset_pic_bin_count	src/biariencode.c	/^void reset_pic_bin_count(void)$/
+rewrite_paramsets	src/filehandle.c	/^int rewrite_paramsets()$/
+rshift_rnd	inc/ifunctions.h	/^static inline int rshift_rnd(int x, int a)$/
+rshift_rnd_sf	inc/ifunctions.h	/^static inline int rshift_rnd_sf(int x, int a)$/
+rshift_rnd_us	inc/ifunctions.h	/^static inline unsigned int rshift_rnd_us(unsigned /
+rshift_rnd_us_sf	inc/ifunctions.h	/^static inline unsigned int rshift_rnd_us_sf(unsign/
+se_linfo	src/vlc.c	/^void se_linfo(int se, int dummy, int *len,int *inf/
+se_v	src/vlc.c	/^int se_v (char *tracestring, int value, Bitstream /
+set_MB_parameters	src/macroblock.c	/^void set_MB_parameters (int mb_addr)$/
+set_chroma_qp	src/macroblock.c	/^void set_chroma_qp(Macroblock *currMB)$/
+set_last_dquant	src/macroblock.c	/^void set_last_dquant(void)$/
+set_mbaff_parameters	src/rdopt.c	/^void set_mbaff_parameters()$/
+set_ref_pic_num	src/slice.c	/^void set_ref_pic_num()$/
+set_stored_macroblock_parameters	src/rdopt.c	/^void set_stored_macroblock_parameters ()$/
+slice_too_big	src/macroblock.c	/^ int slice_too_big(int rlc_bits)$/
+sliding_window_memory_management	src/mbuffer.c	/^static void sliding_window_memory_management(Stora/
+smpUMHEXBipredIntegerPelBlockMotionSearch	src/me_umhexsmp.c	/^smpUMHEXBipredIntegerPelBlockMotionSearch (imgpel*/
+smpUMHEXFullSubPelBlockMotionSearch	src/me_umhexsmp.c	/^smpUMHEXFullSubPelBlockMotionSearch (imgpel*   ori/
+smpUMHEXIntegerPelBlockMotionSearch	src/me_umhexsmp.c	/^smpUMHEXIntegerPelBlockMotionSearch ($/
+smpUMHEXSubPelBlockMotionSearch	src/me_umhexsmp.c	/^smpUMHEXSubPelBlockMotionSearch  ($/
+smpUMHEX_decide_intrabk_SAD	src/me_umhexsmp.c	/^void smpUMHEX_decide_intrabk_SAD()$/
+smpUMHEX_free_mem	src/me_umhexsmp.c	/^void smpUMHEX_free_mem()$/
+smpUMHEX_get_mem	src/me_umhexsmp.c	/^int smpUMHEX_get_mem()$/
+smpUMHEX_init	src/me_umhexsmp.c	/^void smpUMHEX_init()$/
+smpUMHEX_setup	src/me_umhexsmp.c	/^void smpUMHEX_setup(short ref,$/
+smpUMHEX_skip_intrabk_SAD	src/me_umhexsmp.c	/^void smpUMHEX_skip_intrabk_SAD(int best_mode, int /
+start_macroblock	src/macroblock.c	/^void start_macroblock(int mb_addr, int mb_field)$/
+start_sequence	src/filehandle.c	/^int start_sequence()$/
+start_slice	src/slice.c	/^int start_slice()$/
+store_adaptive_rounding_parameters	src/rdopt.c	/^void store_adaptive_rounding_parameters (int mode,/
+store_coding_state	src/rdopt_coding_state.c	/^store_coding_state (CSptr cs)$/
+store_coding_state_cs_cm	src/rdopt.c	/^void store_coding_state_cs_cm()$/
+store_contexts	src/context_ini.c	/^void store_contexts ()$/
+store_macroblock_parameters	src/rdopt.c	/^void store_macroblock_parameters (int mode)$/
+store_picture_in_dpb	src/mbuffer.c	/^void store_picture_in_dpb(StorablePicture* p)$/
+submacroblock_mode_decision	src/mode_decision.c	/^void submacroblock_mode_decision(RD_PARAMS enc_mb,/
+symbol2uvlc	src/vlc.c	/^int symbol2uvlc(SyntaxElement *sym)$/
+symbol2vlc	src/vlc.c	/^int symbol2vlc(SyntaxElement *sym)$/
+terminate_macroblock	src/macroblock.c	/^void terminate_macroblock( Boolean *end_of_slice, /
+terminate_sequence	src/filehandle.c	/^int terminate_sequence()$/
+terminate_slice	src/slice.c	/^int terminate_slice(int lastslice)$/
+testEndian	src/output.c	/^int testEndian()$/
+test_wp_B_slice	src/weighted_prediction.c	/^int test_wp_B_slice(int select_method)$/
+test_wp_P_slice	src/weighted_prediction.c	/^int test_wp_P_slice(int select_offset)$/
+trace2out	src/vlc.c	/^void trace2out(SyntaxElement *sym)$/
+trace2out_cabac	src/vlc.c	/^void trace2out_cabac(SyntaxElement *sym)$/
+u_1	src/vlc.c	/^Boolean u_1 (char *tracestring, int value, Bitstre/
+u_v	src/vlc.c	/^int u_v (int n, char *tracestring, int value, Bits/
+ue_linfo	src/vlc.c	/^void ue_linfo(int ue, int dummy, int *len,int *inf/
+ue_v	src/vlc.c	/^int ue_v (char *tracestring, int value, Bitstream /
+unary_bin_encode	src/cabac.c	/^void unary_bin_encode(EncodingEnvironmentPtr eep_d/
+unary_bin_max_encode	src/cabac.c	/^void unary_bin_max_encode(EncodingEnvironmentPtr e/
+unary_exp_golomb_level_encode	src/cabac.c	/^void unary_exp_golomb_level_encode( EncodingEnviro/
+unary_exp_golomb_mv_encode	src/cabac.c	/^void unary_exp_golomb_mv_encode(EncodingEnvironmen/
+uninit_out_buffer	src/output.c	/^void uninit_out_buffer()$/
+unmark_for_long_term_reference	src/mbuffer.c	/^static void unmark_for_long_term_reference(FrameSt/
+unmark_for_reference	src/mbuffer.c	/^static void unmark_for_reference(FrameStore* fs)$/
+unmark_long_term_field_for_reference_by_frame_idx	src/mbuffer.c	/^static void unmark_long_term_field_for_reference_b/
+unmark_long_term_frame_for_reference_by_frame_idx	src/mbuffer.c	/^static void unmark_long_term_frame_for_reference_b/
+updateBottomField	src/rc_quadratic.c	/^void updateBottomField( rc_quadratic *prc )$/
+updateBparams	src/rc_quadratic.c	/^void updateBparams( rc_quadratic *prc, int complex/
+updateComplexity	src/rc_quadratic.c	/^int updateComplexity( rc_quadratic *prc, Boolean i/
+updateFirstBU	src/rc_quadratic.c	/^int updateFirstBU( rc_quadratic *prc, int topfield/
+updateFirstP	src/rc_quadratic.c	/^int updateFirstP( rc_quadratic *prc, int topfield /
+updateLastBU	src/rc_quadratic.c	/^void updateLastBU( rc_quadratic *prc, int topfield/
+updateMADModel	src/rc_quadratic.c	/^void updateMADModel (rc_quadratic *prc)$/
+updateModelQPBU	src/rc_quadratic.c	/^void updateModelQPBU( rc_quadratic *prc, int topfi/
+updateModelQPFrame	src/rc_quadratic.c	/^void updateModelQPFrame( rc_quadratic *prc, int m_/
+updateNegativeTarget	src/rc_quadratic.c	/^int updateNegativeTarget( rc_quadratic *prc, int t/
+updatePparams	src/rc_quadratic.c	/^void updatePparams( rc_quadratic *prc, int complex/
+updateQPInterlace	src/rc_quadratic.c	/^void updateQPInterlace( rc_quadratic *prc )$/
+updateQPInterlaceBU	src/rc_quadratic.c	/^void updateQPInterlaceBU( rc_quadratic *prc )$/
+updateQPNonPicAFF	src/rc_quadratic.c	/^void updateQPNonPicAFF( rc_quadratic *prc )$/
+updateQPRC0	src/rc_quadratic.c	/^int updateQPRC0(rc_quadratic *prc, int topfield)$/
+updateQPRC1	src/rc_quadratic.c	/^int updateQPRC1(rc_quadratic *prc, int topfield)$/
+updateQPRC2	src/rc_quadratic.c	/^int updateQPRC2(rc_quadratic *prc, int topfield)$/
+updateQPRC3	src/rc_quadratic.c	/^int updateQPRC3(rc_quadratic *prc, int topfield)$/
+updateRCModel	src/rc_quadratic.c	/^void updateRCModel (rc_quadratic *prc)$/
+update_field_frame_contexts	src/context_ini.c	/^void update_field_frame_contexts (int field)$/
+update_lambda_costs	src/mode_decision.c	/^void update_lambda_costs(RD_PARAMS *enc_mb, int la/
+update_ltref_list	src/mbuffer.c	/^void update_ltref_list(void)$/
+update_offset_params	src/rdopt.c	/^void update_offset_params(int mode, int luma_trans/
+update_rc	src/ratectl.c	/^void update_rc(Macroblock *currMB, short best_mode/
+update_ref_list	src/mbuffer.c	/^void update_ref_list(void)$/
+update_refresh_map	src/rdopt.c	/^void update_refresh_map(int intra, int intra1, Mac/
+weighted_cost	inc/ifunctions.h	/^static inline int weighted_cost(int factor, int bi/
+writeB8_typeInfo_CABAC	src/cabac.c	/^void writeB8_typeInfo_CABAC(SyntaxElement *se, Dat/
+writeCBP_BIT_CABAC	src/cabac.c	/^void writeCBP_BIT_CABAC (int b8, int bit, int cbp,/
+writeCBP_CABAC	src/cabac.c	/^void writeCBP_CABAC(SyntaxElement *se, DataPartiti/
+writeCBP_VLC	src/vlc.c	/^void writeCBP_VLC(SyntaxElement *se, DataPartition/
+writeCBPandLumaCoeff	src/macroblock.c	/^int writeCBPandLumaCoeff (void)$/
+writeCIPredMode_CABAC	src/cabac.c	/^void writeCIPredMode_CABAC(SyntaxElement *se, Data/
+writeChromaCoeff	src/macroblock.c	/^int writeChromaCoeff (void)$/
+writeChromaIntraPredMode	src/macroblock.c	/^int writeChromaIntraPredMode(void)$/
+writeCoeff4x4_CAVLC	src/macroblock.c	/^int writeCoeff4x4_CAVLC (int block_type, int b8, i/
+writeDquant_CABAC	src/cabac.c	/^void writeDquant_CABAC(SyntaxElement *se, DataPart/
+writeFieldModeInfo_CABAC	src/cabac.c	/^void writeFieldModeInfo_CABAC(SyntaxElement *se, D/
+writeIPCMBytes	src/block.c	/^int writeIPCMBytes(Bitstream *currStream)$/
+writeIntra4x4Modes	src/macroblock.c	/^int writeIntra4x4Modes(void)$/
+writeIntra8x8Modes	src/macroblock.c	/^int writeIntra8x8Modes(void)$/
+writeIntraModes	src/macroblock.c	/^int writeIntraModes(void)$/
+writeIntraPredMode_CABAC	src/cabac.c	/^void writeIntraPredMode_CABAC(SyntaxElement *se, D/
+writeIntraPredMode_CAVLC	src/vlc.c	/^void writeIntraPredMode_CAVLC(SyntaxElement *se, D/
+writeLumaCoeff4x4_CABAC	src/macroblock.c	/^int writeLumaCoeff4x4_CABAC (int b8, int b4, int i/
+writeLumaCoeff8x8	src/macroblock.c	/^int writeLumaCoeff8x8 (int block8x8, int block_mod/
+writeLumaCoeff8x8_CABAC	src/macroblock.c	/^int writeLumaCoeff8x8_CABAC (int b8, int intra_mod/
+writeMBLayer	src/macroblock.c	/^int writeMBLayer (int rdopt, int *coeff_rate)$/
+writeMB_skip_flagInfo_CABAC	src/cabac.c	/^void writeMB_skip_flagInfo_CABAC(SyntaxElement *se/
+writeMB_transform_size_CABAC	src/cabac.c	/^void writeMB_transform_size_CABAC(SyntaxElement *s/
+writeMB_typeInfo_CABAC	src/cabac.c	/^void writeMB_typeInfo_CABAC(SyntaxElement *se, Dat/
+writeMVD_CABAC	src/cabac.c	/^void writeMVD_CABAC(SyntaxElement *se, DataPartiti/
+writeMotionInfo2NAL	src/macroblock.c	/^int writeMotionInfo2NAL (void)$/
+writeMotionVector8x8	src/macroblock.c	/^int writeMotionVector8x8 (int  i0,$/
+writePCMByteAlign	src/block.c	/^int writePCMByteAlign(Bitstream *currStream)$/
+writeRefFrame_CABAC	src/cabac.c	/^void writeRefFrame_CABAC(SyntaxElement *se, DataPa/
+writeReferenceFrame	src/macroblock.c	/^int writeReferenceFrame (int mode, int i, int j, i/
+writeRunLevel_CABAC	src/cabac.c	/^void writeRunLevel_CABAC (SyntaxElement *se, DataP/
+writeSE_Dummy	src/vlc.c	/^void writeSE_Dummy(SyntaxElement *se, DataPartitio/
+writeSE_Fix	src/vlc.c	/^void writeSE_Fix(SyntaxElement *se, DataPartition /
+writeSE_Flag	src/vlc.c	/^void writeSE_Flag(SyntaxElement *se, DataPartition/
+writeSE_SVLC	src/vlc.c	/^void writeSE_SVLC(SyntaxElement *se, DataPartition/
+writeSE_UVLC	src/vlc.c	/^void writeSE_UVLC(SyntaxElement *se, DataPartition/
+writeSE_invFlag	src/vlc.c	/^void writeSE_invFlag(SyntaxElement *se, DataPartit/
+writeSyntaxElement2Buf_Fixed	src/vlc.c	/^int writeSyntaxElement2Buf_Fixed(SyntaxElement *se/
+writeSyntaxElement2Buf_UVLC	src/vlc.c	/^int writeSyntaxElement2Buf_UVLC(SyntaxElement *se,/
+writeSyntaxElement_Level_VLC1	src/vlc.c	/^int writeSyntaxElement_Level_VLC1(SyntaxElement *s/
+writeSyntaxElement_Level_VLCN	src/vlc.c	/^int writeSyntaxElement_Level_VLCN(SyntaxElement *s/
+writeSyntaxElement_NumCoeffTrailingOnes	src/vlc.c	/^int writeSyntaxElement_NumCoeffTrailingOnes(Syntax/
+writeSyntaxElement_NumCoeffTrailingOnesChromaDC	src/vlc.c	/^int writeSyntaxElement_NumCoeffTrailingOnesChromaD/
+writeSyntaxElement_Run	src/vlc.c	/^int writeSyntaxElement_Run(SyntaxElement *se, Data/
+writeSyntaxElement_TotalZeros	src/vlc.c	/^int writeSyntaxElement_TotalZeros(SyntaxElement *s/
+writeSyntaxElement_TotalZerosChromaDC	src/vlc.c	/^int writeSyntaxElement_TotalZerosChromaDC(SyntaxEl/
+writeSyntaxElement_VLC	src/vlc.c	/^int writeSyntaxElement_VLC(SyntaxElement *se, Data/
+writeUVLC2buffer	src/vlc.c	/^void  writeUVLC2buffer(SyntaxElement *se, Bitstrea/
+writeUnit	src/image.c	/^static void writeUnit(Bitstream* currStream, int p/
+writeVlcByteAlign	src/vlc.c	/^void writeVlcByteAlign(Bitstream* currStream)$/
+write_PPS	src/filehandle.c	/^int write_PPS(int len, int PPS_id)$/
+write_and_store_CBP_block_bit	src/cabac.c	/^void write_and_store_CBP_block_bit (Macroblock* cu/
+write_buffer	src/leaky_bucket.c	/^void write_buffer(unsigned long NumberLeakyBuckets/
+write_one_macroblock	src/macroblock.c	/^void write_one_macroblock (int eos_bit)$/
+write_out_picture	src/output.c	/^void write_out_picture(StorablePicture *p, int p_o/
+write_picture	src/output.c	/^void write_picture(StorablePicture *p, int p_out, /
+write_sei_message	src/sei.c	/^void write_sei_message(int id, byte* payload, int /
+write_significance_map	src/cabac.c	/^void write_significance_map (Macroblock* currMB, E/
+write_significant_coefficients	src/cabac.c	/^void write_significant_coefficients (Macroblock* c/
+write_stored_frame	src/output.c	/^void write_stored_frame( FrameStore *fs,int p_out)/
+write_terminating_bit	src/macroblock.c	/^void write_terminating_bit (short bit)$/
+write_unpaired_field	src/output.c	/^void write_unpaired_field(FrameStore* fs, int p_ou/
+writeout_picture	src/image.c	/^static int writeout_picture(Picture *pic)$/

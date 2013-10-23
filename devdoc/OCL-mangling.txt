@@ -1,0 +1,109 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                 Function mangling for OpenCL C
+                          --------------
+
+For targets with a unique addressing space, mangling does not
+have to consider address space qualifiers to discriminate
+fuctions
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+functionMangling: "_Z" functionName parameterList
+
+functionName : identifier
+
+parameterList : ( type )+ | void | star
+
+
+type : void |
+       int  | char  | short  | long  | longlong |
+       uint | uchar | ushort | ulong | ulonglong |
+       float | double | longdouble |
+       bool | 
+       typetag |
+       pointer | Array |
+       varargs |
+       function | vector |
+       typedef
+
+# Matching any parameter list (for function prototype without any
+# parameter)
+star    : '*'
+
+###############################
+ Basic types
+###############################
+
+void	: 'v'
+bool    : 'b'
+
+char	: 'c'
+uchar	: 'h'
+short	: 's'
+ushort	: 't'
+int	: 'i'
+uint	: 'j'
+long	: 'l'
+ulong	: 'm'
+longlong  : 'x'
+ulonglong : 'y'
+
+
+float	: 'f'
+double	: 'd'
+longdouble : 'e'
+
+// struct, array, 
+typetag : identifier
+
+varargs : 'z'
+
+typedef : identifier | type
+=> in case of typedef, the mangling takes the name of the typedef
+   if it is an anonymous structure, union or enum, otherwise,
+   it takes the name of the related type
+
+
+
+
+###############################
+ Complex types (with sub-types)
+###############################
+
+function   : 'F' returnType parameterList 'E'
+returnType : type
+
+
+
+Array : 'A' (qualifier)? dimension type
+
+pointer : 'P' (qualifier)? type
+
+* for OpenCL : address space can only appear in function arguments
+*              as a qualifier to a pointer
+
+qualifier : Q addressSpace
+addressSpace : ( private | local | constant | global ) ?
+private  : 'p'  
+local	 : 'l'
+constant : 'c'
+global	 : 'g'
+
+
+vector	    : 'V' nbElements elementType
+nbElement   : number
+elementType : int  | char  | short  | long  | longlong |
+              uint | uchar | ushort | ulong | ulonglong |
+              float | double | longdouble
+
+
+
+###############################
+ Basic
+###############################
+
+identifier : nbLetters ( letter )+
+nbLetter   : number
+
+number : ( digit )+

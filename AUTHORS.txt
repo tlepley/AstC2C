@@ -1,0 +1,21 @@
+The copyright holder for AstC2C is STMicroelectronics.
+
+* This tool was first developed developed by:
+
+Thierry LEPLEY <thierry.lepley@st.com>, <ikolomus@yahoo.com>
+	Original author, maintainer.
+
+
+* AstC2C includes the ANTLR 3.4  parser generator, as a jar library
+(see license/ANTLR3_license.txt)
+  lib/antlr-3.4-complete.jar
+
+* AstC2C reuses and modifies files from the ANTLR v2 C parser example
+  developed by Monty Zukoski (see license/NONINC_license.txt)
+  src/parser/GnuCParser.g
+  src/parser/GnuCTreeParser.g
+  src/parser/GnuCEmitter.g
+  src/parser/PreprocessorInfoChannel.java
+  src/parser/NodeAST.java
+  src/ir/base/LineObject.java
+  

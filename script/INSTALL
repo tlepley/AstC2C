@@ -1,0 +1,243 @@
+#!/bin/bash
+
+#  This file is part of AstC2C.
+#
+#  Copyright (c) STMicroelectronics, 2013.
+#  All rights reserved.
+#
+#  Redistribution and use in source and binary forms, with or without modification,
+#  are permitted provided that the following conditions are met:
+#
+#    * Redistributions of source code must retain the above copyright notice, 
+#      this list of conditions and the following disclaimer.
+#    * Redistributions in binary form must reproduce the above copyright notice,
+#      this list of conditions and the following disclaimer in the documentation
+#      and/or other materials provided with the distribution.
+#    * Neither the name of STMicroelectronics nor the names of its contributors
+#      may be used to endorse or promote products derived from this software
+#      without specific prior written permission.
+#
+#  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" 
+#  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, 
+#  THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE 
+#  ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE 
+#  LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+#  CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
+#  GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+#  HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+#  LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT
+#  OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+#  Authors: Thierry Lepley
+
+
+checkEnv() {
+    local name=$1
+    local value
+    eval value=\$$1
+    
+    if [ -z "$value" ]; then
+        echo "$name is not set"
+        exit 1
+    fi
+}
+
+checkEnvPath() {
+    local name=$1
+    local value
+    eval value=\$$1
+    checkEnv $name
+    if [ ! -e "$value" ]; then
+        echo "$name=$value is not a valid path"
+        exit 1
+    fi
+}
+
+copyFile() {
+    local source=$1
+    local dest=$2
+    if [ -z "$source" ]; then
+        echo "Copying $source to $dest: unspecified source"
+        exit 1
+    fi
+    if [ -z "$dest" ]; then
+        echo "Copying $source to $dest: unspecified destination"
+        exit 1
+    fi
+    if [ -z "$3" ]; then
+        cp $source $dest
+    else
+	if [ -z "$4" ]; then
+            cp -r $source $dest
+	    find $dest -name ".svn" | xargs rm -rf
+	else
+            cp -r $source/* $dest
+	    find $dest -name ".svn" | xargs rm -rf
+	fi
+    fi
+    if [ $? != 0 ] ; then
+        echo "Copying $source to $dest: failed"
+        exit 1
+    fi
+}
+
+makeDir() {
+    if [ -z "$1" ]; then
+        echo "Making directory: unspecified directory"
+        exit 1
+    fi
+    mkdir -p $1
+    if [ $? != 0 ] ; then
+        echo "Making directory $1: failed"
+        exit 1
+    fi
+}
+
+
+copyDir() {
+    copyFile $1 $2 1
+}
+
+copyDirContent() {
+    copyFile $1 $2 1 1
+}
+
+
+
+
+
+# Useful defines
+BUILD_DIR=install
+
+echo
+echo "---------------------------------------------"
+echo " Installing astc2c target compilers"
+echo
+echo " target directory: $BUILD_DIR"
+echo "---------------------------------------------"
+echo
+
+
+echo "---> Building the C2C jar file"
+ant jar
+echo
+echo
+
+
+#-------------------------------------
+#-------------- ASTC2C ---------------
+#-------------------------------------
+ASTC2C_PACKAGE_NAME="ASTC2C"
+ASTC2C_INSTALL_DIR="$BUILD_DIR"/"$ASTC2C_PACKAGE_NAME"
+ASTC2C_TAR="$ASTC2C_PACKAGE_NAME".tgz
+echo "---> installing the generic astc2c parser into"
+echo "     install dir : $ASTC2C_INSTALL_DIR"
+
+rm -rf "$ASTC2C_INSTALL_DIR"
+mkdir -p "$ASTC2C_INSTALL_DIR"
+# bin directory
+mkdir -p "$ASTC2C_INSTALL_DIR"/bin
+cp bin/astc2c "$ASTC2C_INSTALL_DIR"/bin
+# jar directory
+mkdir -p "$ASTC2C_INSTALL_DIR"/jar
+cp jar/*.jar "$ASTC2C_INSTALL_DIR"/jar/
+# external jar directory
+mkdir -p "$ASTC2C_INSTALL_DIR"/lib/jar
+cp lib/jar/*.jar "$ASTC2C_INSTALL_DIR"/lib/jar/
+# builtins directory
+mkdir -p "$ASTC2C_INSTALL_DIR"/builtins/OCL/target_abi_specific/
+cp builtins/OCL/*.h builtins/OCL/*.hl "$ASTC2C_INSTALL_DIR"/builtins/OCL/
+cp builtins/OCL/target_abi_specific/*.hl "$ASTC2C_INSTALL_DIR"/builtins/OCL/target_abi_specific/
+# Compiler library
+makeDir "$ASTC2C_INSTALL_DIR"/lib/include
+# -> Vector emulation
+cp lib/include/vector_emulation_C.h "$ASTC2C_INSTALL_DIR"/lib/include/
+cp lib/include/vector_emulation_OCL.h "$ASTC2C_INSTALL_DIR"/lib/include/
+cp lib/include/vector_emulation_builtins.h "$ASTC2C_INSTALL_DIR"/lib/include/
+# Other
+cp license.txt "$ASTC2C_INSTALL_DIR"/
+
+# Create the tarfile
+echo "---> create the ASTC2C tarfile"
+echo "     name : $ASTC2C_TAR"
+pushd $BUILD_DIR > /dev/null
+tar zcf $ASTC2C_TAR $ASTC2C_PACKAGE_NAME
+popd > /dev/null
+echo
+
+#-------------------------------------
+#----------- ASTC2C x64 --------------
+#-------------------------------------
+ASTC2C_PACKAGE_NAME="ASTC2C_x64"
+ASTC2C_INSTALL_DIR="$BUILD_DIR"/"$ASTC2C_PACKAGE_NAME"
+ASTC2C_TAR="$ASTC2C_PACKAGE_NAME".tgz
+echo "---> installing the generic astc2c parser into"
+echo "     install dir : $ASTC2C_INSTALL_DIR"
+
+rm -rf "$ASTC2C_INSTALL_DIR"
+mkdir -p "$ASTC2C_INSTALL_DIR"
+# bin directory
+mkdir -p "$ASTC2C_INSTALL_DIR"/bin
+cp bin/astc2c_x64 "$ASTC2C_INSTALL_DIR"/bin/astc2c
+# jar directory
+mkdir -p "$ASTC2C_INSTALL_DIR"/jar
+cp jar/*.jar "$ASTC2C_INSTALL_DIR"/jar/
+# external jar directory
+mkdir -p "$ASTC2C_INSTALL_DIR"/lib/jar
+cp lib/jar/*.jar "$ASTC2C_INSTALL_DIR"/lib/jar/
+# builtins directory
+mkdir -p "$ASTC2C_INSTALL_DIR"/builtins/OCL/target_abi_specific/
+cp builtins/OCL/*.h builtins/OCL/*.hl "$ASTC2C_INSTALL_DIR"/builtins/OCL/
+cp builtins/OCL/target_abi_specific/*.hl "$ASTC2C_INSTALL_DIR"/builtins/OCL/target_abi_specific/
+# Compiler library
+makeDir "$ASTC2C_INSTALL_DIR"/lib/include
+# -> Vector emulation
+cp lib/include/vector_emulation_C.h "$ASTC2C_INSTALL_DIR"/lib/include/
+cp lib/include/vector_emulation_OCL.h "$ASTC2C_INSTALL_DIR"/lib/include/
+cp lib/include/vector_emulation_builtins.h "$ASTC2C_INSTALL_DIR"/lib/include/
+# Other
+cp license.txt "$ASTC2C_INSTALL_DIR"/
+
+# Create the tarfile
+echo "---> create the ASTC2C tarfile"
+echo "     name : $ASTC2C_TAR"
+pushd $BUILD_DIR > /dev/null
+tar zcf $ASTC2C_TAR $ASTC2C_PACKAGE_NAME
+popd > /dev/null
+echo
+
+
+#-------------------------------------
+#--------------- RC2C ----------------
+#-------------------------------------
+RC2C_PACKAGE_NAME="RC2C"
+RC2C_INSTALL_DIR="$BUILD_DIR"/"$RC2C_PACKAGE_NAME"
+RC2C_TAR="$RC2C_PACKAGE_NAME".tgz
+echo "---> installing the reentrant compiler rc2c"
+echo "     install dir : $RC2C_INSTALL_DIR"
+
+rm -rf "$RC2C_INSTALL_DIR"
+mkdir -p "$RC2C_INSTALL_DIR"
+# bin directory
+mkdir -p "$RC2C_INSTALL_DIR"/bin
+cp bin/rc2c "$RC2C_INSTALL_DIR"/bin
+# jar directory
+mkdir -p "$RC2C_INSTALL_DIR"/jar
+cp jar/*.jar "$RC2C_INSTALL_DIR"/jar/
+# external jar directory
+mkdir -p "$RC2C_INSTALL_DIR"/lib/jar
+cp lib/jar/*.jar "$RC2C_INSTALL_DIR"/lib/jar/
+# Compiler library
+makeDir "$RC2C_INSTALL_DIR"/lib/include
+copyDirContent lib/include "$RC2C_INSTALL_DIR"/lib/include 
+# Other
+cp license.txt "$RC2C_INSTALL_DIR"/
+
+# Create the tarfile
+echo "---> create the RC2C tarfile"
+echo "     name : RC2C_TAR"
+pushd $BUILD_DIR > /dev/null
+tar zcf $RC2C_TAR $RC2C_PACKAGE_NAME
+popd > /dev/null
+echo
+

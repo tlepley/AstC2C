@@ -1,0 +1,21 @@
+This directory contains the reference code of h264 (JM 12.2), which has been slightly modified in order to demonstrate the use of 'ComponentC2C' in the 'C' mode.
+
+The directory holds a h264 encoder (lencod) and decoder (ldecod).
+
+
+The Makefile of the root directory has 4 main targets:
+
+  - <default> target
+    builds two versions of the h264 encoder and decoder in the 'bin' directory:
+    + Standard version (lencod, ldecod)
+    + 'Componentized' (C mode) version (c2c_lencod, c2c_ldecod)
+
+  - 'test'
+     builds the two versions of the h264 encoder and decoder in the 'bin' directory, runs both version on a test video file and checks that both encoded and decoded files are equivalent
+
+  - 'clean'
+    cleans temporary build files
+
+  - 'cleanall'
+    cleans temporary build files and binary executables
+
